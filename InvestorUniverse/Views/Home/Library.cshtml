@@ -1,0 +1,37 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+
+    ViewBag.Title = "Investor Universe - Libraries Page";
+}
+
+
+<div class="row">
+    <div class="col-md-5">
+        <h2>Availabe Libraries</h2>
+        <p>
+            Easily manage list information, select one the libraries below
+        </p>
+        <div class="btn-group-vertical">
+            <a class="btn btn-primary" @Html.ActionLink("Abbott Personel >>", "Index", "AbbottPerson")
+                <a class="btn btn-primary" @Html.ActionLink("Co Investment >>", "Index", "Coinvestment")
+                    <a class="btn btn-primary" @Html.ActionLink("Company Type >>", "Index", "CompanyType")
+                                <a class="btn btn-primary" @Html.ActionLink("Currency >>", "Index", "Currency")
+                                    <a class="btn btn-primary" @Html.ActionLink("Country >>", "Index", "Country")
+                                        <a class="btn btn-primary" @Html.ActionLink("Mailing List >>", "Index", "MailingList")
+                                            <a class="btn btn-primary"
+                                                <a class="btn btn-primary"
+                                                    <a class="btn btn-primary" @Html.ActionLink("Priority >>", "Index", "Priority")
+                                                        <a class="btn btn-primary" <a class="btn btn-primary" @Html.ActionLink("Region >>", "Index", "Region")
+                                                                                       <a class="btn btn-primary" @Html.ActionLink("RFP Outcome >>", "Index", "RFPOutcome")
+                                                                                           <a class="btn btn-primary" @Html.ActionLink("Separate Account >>", "Index", "SeparateAccount")<a class="btn btn-primary" @Html.ActionLink("Stage >>", "Index", "Stage")</div>
+
+
+    </div>
+    
+</div>
+
+
+

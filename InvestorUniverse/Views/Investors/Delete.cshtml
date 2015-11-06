@@ -1,0 +1,456 @@
+﻿@model InvestorUniverse.Models.Investor
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Investor</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.City)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.City)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.State)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.State)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Zip_Code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Zip_Code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Web)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Web)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fax)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fax)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Funds_under_Mgmt__mn_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Funds_under_Mgmt__mn_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Funds_under_Mgmt__mn_USD_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Funds_under_Mgmt__mn_USD_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Funds_under_Mgmt__mn_EUR_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Funds_under_Mgmt__mn_EUR_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Current_Allocation_to_PE____)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Current_Allocation_to_PE____)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Current_Allocation_to_PE__mn_USD_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Current_Allocation_to_PE__mn_USD_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Current_Allocation_to_PE__mn_EUR_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Current_Allocation_to_PE__mn_EUR_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Target_Allocation_to_PE____)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Target_Allocation_to_PE____)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Target_Allocation_to_PE__mn_USD_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Target_Allocation_to_PE__mn_USD_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Target_Allocation_to_PE__mn_EUR_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Target_Allocation_to_PE__mn_EUR_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Separate_Accounts_Committed_Capital___)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Separate_Accounts_Committed_Capital___)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Separate_Accounts_Committed_Capital_USD_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Separate_Accounts_Committed_Capital_USD_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Separate_Accounts_Committed_Capital_EUR_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Separate_Accounts_Committed_Capital_EUR_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Typical_Investment_Size__mn_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Typical_Investment_Size__mn_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fund_Preferences)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fund_Preferences)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Geographic_Preferences)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Geographic_Preferences)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.First_Close_Investor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.First_Close_Investor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Co_Invest_with_GP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Co_Invest_with_GP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Next_12_Months_Amount_min__mn_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Next_12_Months_Amount_min__mn_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Next_12_Months_Amount_max__mn_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Next_12_Months_Amount_max__mn_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Next_12_Months_Amount___mn__min)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Next_12_Months_Amount___mn__min)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Next_12_Months_Amount___mn__max)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Next_12_Months_Amount___mn__max)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Next_12_Months_Number_of_Funds__min_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Next_12_Months_Number_of_Funds__min_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Next_12_Months_Number_of_Funds__max_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Next_12_Months_Number_of_Funds__max_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Next_12_Months___Fund_Type_Preferences)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Next_12_Months___Fund_Type_Preferences)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date_of_12_Month_Plan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date_of_12_Month_Plan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.General_Consultants)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.General_Consultants)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Private_Equity_Consultants)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Private_Equity_Consultants)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AbbottPerson1.AbbottPerson1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AbbottPerson1.AbbottPerson1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Coinvestment.Coinvestments)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Coinvestment.Coinvestments)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CompanyType.Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CompanyType.Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Country.Country1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Country.Country1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Currency.Currency1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Currency.Currency1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Currency1.Currency1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Currency1.Currency1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Currency2.Currency1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Currency2.Currency1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Currency3.Currency1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Currency3.Currency1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstClose.FirstClose1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstClose.FirstClose1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstTime.FirstTime1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstTime.FirstTime1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MeetingFrequency1.MeetingFrequency1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MeetingFrequency1.MeetingFrequency1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PEInvesting.PEInvesting1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PEInvesting.PEInvesting1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Priority1.Priority1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Priority1.Priority1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Region.Region1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Region.Region1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RFPOutCome1.RFPOutCome1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RFPOutCome1.RFPOutCome1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SeparateAccount.SeparateAccount1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SeparateAccount.SeparateAccount1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Stage1.Stage1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Stage1.Stage1)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

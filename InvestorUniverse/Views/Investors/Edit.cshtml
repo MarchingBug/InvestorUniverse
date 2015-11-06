@@ -1,0 +1,512 @@
+﻿@model InvestorUniverse.Models.Investor
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit </h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div >
+    <h4>Investor</h4>
+        <div>
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.Id)
+
+    <fieldset>
+        <div class="row">
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "input-group" })
+                   
+                        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Name)
+                   
+               </div>
+
+            <div class="form-group  col-md-6">
+                @Html.LabelFor(model => model.PEInvestingId, htmlAttributes: new {@class = "form-group "})
+               
+                    @Html.DropDownList("PEInvestingId", (IEnumerable<SelectListItem>)ViewBag.PEInvestingId, new { @class = "form-control" }  )
+                    @Html.ValidationMessageFor(model => model.PEInvestingId)
+               
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="form-group  col-md-6">
+                @Html.LabelFor(model => model.TypeId, htmlAttributes: new {@class = "form-group "})
+                <div class="editor-field">
+                    @Html.DropDownList("TypeId", (IEnumerable<SelectListItem>) ViewBag.TypeId, new {@class = "form-control"})
+                    @Html.ValidationMessageFor(model => model.TypeId)
+                </div>
+            </div>
+
+            <div class="form-group  col-md-6">
+                @Html.LabelFor(model => model.RegionId, htmlAttributes: new {@class = "form-group "})
+
+                @Html.DropDownList("RegionId", (IEnumerable<SelectListItem>) ViewBag.RegionId, new {@class = "form-control"})
+                @Html.ValidationMessageFor(model => model.RegionId)
+
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="form-group   col-md-6">
+                @Html.LabelFor(model => model.Address1, htmlAttributes: new { @class = "form-group " })
+
+                @Html.EditorFor(model => model.Address1, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Address1)
+
+            </div>
+
+            <div class="form-group   col-md-6">
+                @Html.LabelFor(model => model.Address2, htmlAttributes: new { @class = "form-group " })
+
+                @Html.EditorFor(model => model.Address2, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Address2)
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group  col-md-6">
+                @Html.LabelFor(model => model.City, htmlAttributes: new { @class = "form-group " })
+
+                @Html.EditorFor(model => model.City, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.City)
+
+            </div>
+
+            <div class="form-group  col-md-6">
+                @Html.LabelFor(model => model.State, htmlAttributes: new { @class = "form-group " })
+
+                @Html.EditorFor(model => model.State, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.State)
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group  col-md-6">
+                @Html.LabelFor(model => model.Zip_Code, htmlAttributes: new {@class = "form-group "})
+
+                @Html.EditorFor(model => model.Zip_Code, new {htmlAttributes = new {@class = "form-control"}})
+                @Html.ValidationMessageFor(model => model.Zip_Code)
+
+            </div>
+
+            <div class="form-group  col-md-6">
+                @Html.LabelFor(model => model.CountryId, htmlAttributes: new {@class = "form-group "})
+
+                @Html.DropDownList("CountryId",  (IEnumerable<SelectListItem>)ViewBag.CountryId, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.CountryId)
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.Web, htmlAttributes: new { @class = "form-group " })
+
+                @Html.EditorFor(model => model.Web, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Web)
+
+            </div>
+
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "form-group " })
+
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Email)
+
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.Tel, htmlAttributes: new {@class = "form-group "})
+
+                @Html.EditorFor(model => model.Tel, new {htmlAttributes = new {@class = "form-control"}})
+                @Html.ValidationMessageFor(model => model.Tel)
+
+            </div>
+
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.Fax, htmlAttributes: new {@class = "form-group "})
+
+                @Html.EditorFor(model => model.Fax, new {htmlAttributes = new {@class = "form-control"}})
+                @Html.ValidationMessageFor(model => model.Fax)
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.Funds_under_Mgmt__mn_, htmlAttributes: new { @class = "form-group " })
+
+                @Html.EditorFor(model => model.Funds_under_Mgmt__mn_, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Funds_under_Mgmt__mn_)
+
+            </div>
+
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.FundUnderManagementCurrencyId, "Fund Under Management Currency", htmlAttributes: new { @class = "form-group " })
+
+                @Html.DropDownList("FundUnderManagementCurrencyId", (IEnumerable<SelectListItem>)ViewBag.FundUnderManagementCurrencyId, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.FundUnderManagementCurrencyId)
+
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.Funds_under_Mgmt__mn_USD_, htmlAttributes: new { @class = "form-group " })
+
+                @Html.EditorFor(model => model.Funds_under_Mgmt__mn_USD_, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Funds_under_Mgmt__mn_USD_)
+
+            </div>
+
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.Funds_under_Mgmt__mn_EUR_, htmlAttributes: new { @class = "form-group " })
+
+                @Html.EditorFor(model => model.Funds_under_Mgmt__mn_EUR_, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Funds_under_Mgmt__mn_EUR_)
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.Current_Allocation_to_PE____, htmlAttributes: new { @class = "form-group " })
+
+                @Html.EditorFor(model => model.Current_Allocation_to_PE____, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Current_Allocation_to_PE____)
+
+            </div>
+
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.Current_Allocation_to_PE__mn_USD_, htmlAttributes: new { @class = "form-group " })
+
+                @Html.EditorFor(model => model.Current_Allocation_to_PE__mn_USD_, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Current_Allocation_to_PE__mn_USD_)
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.Current_Allocation_to_PE__mn_EUR_, htmlAttributes: new { @class = "form-group " })
+
+                @Html.EditorFor(model => model.Current_Allocation_to_PE__mn_EUR_, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Current_Allocation_to_PE__mn_EUR_)
+
+            </div>
+
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.Target_Allocation_to_PE____, htmlAttributes: new { @class = "form-group " })
+
+                @Html.EditorFor(model => model.Target_Allocation_to_PE____, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Target_Allocation_to_PE____)
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.Target_Allocation_to_PE__mn_USD_, htmlAttributes: new { @class = "form-group " })
+
+                @Html.EditorFor(model => model.Target_Allocation_to_PE__mn_USD_, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Target_Allocation_to_PE__mn_USD_)
+
+            </div>
+
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.Target_Allocation_to_PE__mn_EUR_, htmlAttributes: new { @class = "form-group " })
+
+                @Html.EditorFor(model => model.Target_Allocation_to_PE__mn_EUR_, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Target_Allocation_to_PE__mn_EUR_)
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.Separate_Accounts_Committed_Capital___, htmlAttributes: new { @class = "form-group " })
+
+                @Html.EditorFor(model => model.Separate_Accounts_Committed_Capital___, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Separate_Accounts_Committed_Capital___)
+
+            </div>
+
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.Separate_Accounts_Committed_Capital_USD_, htmlAttributes: new { @class = "form-group " })
+
+                @Html.EditorFor(model => model.Separate_Accounts_Committed_Capital_USD_, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Separate_Accounts_Committed_Capital_USD_)
+
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.Separate_Accounts_Committed_Capital_EUR_, htmlAttributes: new { @class = "form-group " })
+
+                @Html.EditorFor(model => model.Separate_Accounts_Committed_Capital_EUR_, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Separate_Accounts_Committed_Capital_EUR_)
+
+            </div>
+
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.Typical_Investment_Size__mn_, htmlAttributes: new { @class = "form-group " })
+
+                @Html.EditorFor(model => model.Typical_Investment_Size__mn_, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Typical_Investment_Size__mn_)
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.Fund_Preferences, htmlAttributes: new { @class = "form-group " })
+
+                @Html.EditorFor(model => model.Fund_Preferences, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Fund_Preferences)
+
+            </div>
+
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.Geographic_Preferences, htmlAttributes: new { @class = "form-group " })
+
+                @Html.EditorFor(model => model.Geographic_Preferences, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Geographic_Preferences)
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.FirstTimeId, "First Time", htmlAttributes: new { @class = "form-group " })
+
+                @Html.DropDownList("FirstTimeId", (IEnumerable<SelectListItem>)ViewBag.FirstTimeId, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.FirstTimeId)
+
+            </div>
+
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.FirstCloseId, "First Close", htmlAttributes: new { @class = "form-group " })
+
+                @Html.DropDownList("FirstCloseId", (IEnumerable<SelectListItem>)ViewBag.FirstCloseId, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.FirstCloseId)
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.First_Close_Investor, htmlAttributes: new { @class = "form-group " })
+
+                @Html.EditorFor(model => model.First_Close_Investor, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.First_Close_Investor)
+
+            </div>
+
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.SeparateAccountId, "Separate Account", htmlAttributes: new { @class = "form-group " })
+
+                @Html.DropDownList("SeparateAccountId", (IEnumerable<SelectListItem>)ViewBag.SeparateAccountId, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.SeparateAccountId)
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.CoInvestmentsId,  htmlAttributes: new { @class = "form-group " })
+
+                @Html.DropDownList("CoInvestmentsId", (IEnumerable<SelectListItem>)ViewBag.CoInvestmentsId, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.CoInvestmentsId)
+
+            </div>
+
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.Co_Invest_with_GP, htmlAttributes: new { @class = "form-group " })
+
+                @Html.EditorFor(model => model.Co_Invest_with_GP, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Co_Invest_with_GP)
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.Next12MonthCurrencyId, "Next 12 Month Currency", htmlAttributes: new { @class = "form-group " })
+                <div class="editor-field">
+                    @Html.DropDownList("Next12MonthCurrencyId", (IEnumerable<SelectListItem>)ViewBag.Next12MonthCurrencyId, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Next12MonthCurrencyId)
+                </div>
+            </div>
+
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.Next_12_Months_Amount_min__mn_, htmlAttributes: new { @class = "form-group " })
+
+                @Html.EditorFor(model => model.Next_12_Months_Amount_min__mn_, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Next_12_Months_Amount_min__mn_)
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.Next_12_Months_Amount_max__mn_, htmlAttributes: new { @class = "form-group " })
+
+                @Html.EditorFor(model => model.Next_12_Months_Amount_max__mn_, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Next_12_Months_Amount_max__mn_)
+
+            </div>
+
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.Next_12_Months_Amount___mn__min, htmlAttributes: new { @class = "form-group " })
+
+                @Html.EditorFor(model => model.Next_12_Months_Amount___mn__min, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Next_12_Months_Amount___mn__min)
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.Next_12_Months_Amount___mn__max, htmlAttributes: new { @class = "form-group " })
+
+                @Html.EditorFor(model => model.Next_12_Months_Amount___mn__max, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Next_12_Months_Amount___mn__max)
+
+            </div>
+
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.Next_12_Months_Number_of_Funds__min_, htmlAttributes: new { @class = "form-group " })
+
+                @Html.EditorFor(model => model.Next_12_Months_Number_of_Funds__min_, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Next_12_Months_Number_of_Funds__min_)
+
+            </div>
+        </div>
+
+    <div class="row">
+        <div class="form-group col-md-6">
+            @Html.LabelFor(model => model.Next_12_Months_Number_of_Funds__max_, htmlAttributes: new { @class = "form-group " })
+
+            @Html.EditorFor(model => model.Next_12_Months_Number_of_Funds__max_, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Next_12_Months_Number_of_Funds__max_)
+
+        </div>
+
+        <div class="form-group col-md-6">
+            @Html.LabelFor(model => model.Next_12_Months___Fund_Type_Preferences, htmlAttributes: new { @class = "form-group " })
+
+            @Html.EditorFor(model => model.Next_12_Months___Fund_Type_Preferences, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Next_12_Months___Fund_Type_Preferences)
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group col-md-6">
+            @Html.LabelFor(model => model.Date_of_12_Month_Plan, htmlAttributes: new { @class = "form-group " })
+
+            @Html.EditorFor(model => model.Date_of_12_Month_Plan, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Date_of_12_Month_Plan)
+
+        </div>
+
+        <div class="form-group col-md-6">
+            @Html.LabelFor(model => model.General_Consultants, htmlAttributes: new { @class = "form-group " })
+            
+                @Html.EditorFor(model => model.General_Consultants, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.General_Consultants)
+           
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group col-md-6">
+            @Html.LabelFor(model => model.Private_Equity_Consultants, htmlAttributes: new { @class = "form-group " })
+
+            @Html.EditorFor(model => model.Private_Equity_Consultants, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Private_Equity_Consultants)
+
+        </div>
+
+        <div class="form-group col-md-6">
+            @Html.LabelFor(model => model.Stage, "Stage", htmlAttributes: new { @class = "form-group " })
+
+            @Html.DropDownList("Stage", (IEnumerable<SelectListItem>)ViewBag.Stage, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Stage)
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group col-md-6">
+            @Html.LabelFor(model => model.RFPOutcome, "RFPOutcome", htmlAttributes: new { @class = "form-group " })
+
+            @Html.DropDownList("RFPOutcome", (IEnumerable<SelectListItem>)ViewBag.RFPOutcome, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.RFPOutcome)
+
+        </div>
+
+        <div class="form-group col-md-6">
+            @Html.LabelFor(model => model.AbbottPerson, "AbbottPerson", htmlAttributes: new { @class = "form-group " })
+
+            @Html.DropDownList("AbbottPerson", (IEnumerable<SelectListItem>)ViewBag.AbbottPerson, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.AbbottPerson)
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group col-md-6">
+            @Html.LabelFor(model => model.MeetingFrequency, "Meeting Frequency", htmlAttributes: new { @class = "form-group " })
+
+            @Html.DropDownList("MeetingFrequency", (IEnumerable<SelectListItem>)ViewBag.MeetingFrequency, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.MeetingFrequency)
+
+        </div>
+
+        <div class="form-group col-md-6">
+            @Html.LabelFor(model => model.Priority, "Priority", htmlAttributes: new { @class = "form-group " })
+
+            @Html.DropDownList("Priority", (IEnumerable<SelectListItem>)ViewBag.Priority, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Priority)
+
+        </div>
+    </div>
+ 
+
+    </fieldset>
+
+
+
+    <div class="form-group col-md-6">
+        <div class="col-md-offset-2 editor-field">
+            <input type="submit" value="Save" class="btn btn-default"/>
+        </div>
+     
+    </div>
+
+
+
+     
+    </div>
+}
+

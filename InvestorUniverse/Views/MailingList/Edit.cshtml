@@ -1,0 +1,52 @@
+﻿@model InvestorUniverse.Models.MailingList
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit Mailing List</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+       
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MailingList1, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MailingList1)
+                @Html.ValidationMessageFor(model => model.MailingList1)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10">
+                Created @Html.DisplayFor(model => model.CreatedBy) | @Html.DisplayFor(model => model.CreatedOn)
+            </div>
+            <div class="col-md-10">
+                Modified : @Html.DisplayFor(model => model.ModifiedBy) |  @Html.DisplayFor(model => model.ModifiedOn)
+            </div>
+        </div>
+
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

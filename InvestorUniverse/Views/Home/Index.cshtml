@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Investor Universe - Home Page";
+}
+
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Investing Companies</h2>
+        <p>
+            Easily manage investor basic information from this link
+        </p>
+        <p><a class="btn btn-default" @Html.ActionLink("Investors >>", "Index", "Investor")</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Contacts</h2>
+        <p>You can easily manage contact basic information from this link</p>
+        <p><a class="btn btn-default" @Html.ActionLink("Contacts >>", "Index", "Contact")</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Libraries</h2>
+        <p>You can easily manage libraries basic information from this link</p>
+        <p><a class="btn btn-default" @Html.ActionLink("Libraries >>", "Library", "Home")</p>
+    </div>
+</div>

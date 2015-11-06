@@ -1,0 +1,504 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0770BEC5-7296-42EC-8A28-D46CA7EF55E6}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>InvestorUniverse</RootNamespace>
+    <AssemblyName>InvestorUniverse</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.1\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <Private>True</Private>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.1.0.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.1.0.0\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.1.0.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.2.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.2.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.0.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.2.0.0\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.2.0.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.2.0.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.2.0.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.2.0.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.2.0.0\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AbbottPersonController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CoinvestmentController.cs" />
+    <Compile Include="Controllers\CompanyTypeController.cs" />
+    <Compile Include="Controllers\ContactsController.cs" />
+    <Compile Include="Controllers\CountryController.cs" />
+    <Compile Include="Controllers\CurrencyController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ImportController.cs" />
+    <Compile Include="Controllers\InvestorsController.cs" />
+    <Compile Include="Controllers\MailingListController.cs" />
+    <Compile Include="Controllers\MarketingFrequencyController.cs" />
+    <Compile Include="Controllers\PEInvestingController.cs" />
+    <Compile Include="Controllers\PriorityController.cs" />
+    <Compile Include="Controllers\ProductListController.cs" />
+    <Compile Include="Controllers\RegionController.cs" />
+    <Compile Include="Controllers\RFPOutComeController.cs" />
+    <Compile Include="Controllers\SeparateAccountController.cs" />
+    <Compile Include="Controllers\StageController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AbbottPerson.cs">
+      <DependentUpon>MarketingEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AbbottPersonMetaData.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Coinvestment.cs">
+      <DependentUpon>MarketingEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CoInvestmentsMetaData.cs" />
+    <Compile Include="Models\CompanyType.cs">
+      <DependentUpon>MarketingEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Contact.cs">
+      <DependentUpon>MarketingEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ContactMetaData.cs" />
+    <Compile Include="Models\Country.cs">
+      <DependentUpon>MarketingEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CountryMetaData.cs" />
+    <Compile Include="Models\Currency.cs">
+      <DependentUpon>MarketingEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CurrencyMetaData.cs" />
+    <Compile Include="Models\DataModifierTracker.cs" />
+    <Compile Include="Models\DateStampMetaData.cs" />
+    <Compile Include="Models\FirstClose.cs">
+      <DependentUpon>MarketingEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FirstTime.cs">
+      <DependentUpon>MarketingEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Industry.cs">
+      <DependentUpon>MarketingEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Intralink.cs">
+      <DependentUpon>MarketingEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Investor.cs">
+      <DependentUpon>MarketingEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\InvestorIndustry.cs">
+      <DependentUpon>MarketingEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\InvestorMetaData.cs" />
+    <Compile Include="Models\InvestorNote.cs">
+      <DependentUpon>MarketingEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\InvestorRegion.cs">
+      <DependentUpon>MarketingEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\InvestorStage.cs">
+      <DependentUpon>MarketingEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MailingList.cs">
+      <DependentUpon>MarketingEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MailingListMetaData.cs" />
+    <Compile Include="Models\MarketingEntities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MarketingEntities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MarketingEntities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MarketingEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MarketingEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MarketingEntities.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MeetingFrequency.cs">
+      <DependentUpon>MarketingEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PEInvesting.cs">
+      <DependentUpon>MarketingEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Priority.cs">
+      <DependentUpon>MarketingEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PriorityMetaData.cs" />
+    <Compile Include="Models\ProductList.cs">
+      <DependentUpon>MarketingEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Region.cs">
+      <DependentUpon>MarketingEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RegionMetaData.cs" />
+    <Compile Include="Models\RFPOutCome.cs">
+      <DependentUpon>MarketingEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RFPOutcomeMetaData.cs" />
+    <Compile Include="Models\SeparateAccount.cs">
+      <DependentUpon>MarketingEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SeparateAccountMetaData.cs" />
+    <Compile Include="Models\Stage.cs">
+      <DependentUpon>MarketingEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StageMetaData.cs" />
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>MarketingEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Type.cs">
+      <DependentUpon>MarketingEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TypeMetaData.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\MarketingEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MarketingEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\MarketingEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MarketingEntities.edmx</DependentUpon>
+      <LastGenOutput>MarketingEntities.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\MarketingEntities.edmx.diagram">
+      <DependentUpon>MarketingEntities.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\MarketingEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MarketingEntities.edmx</DependentUpon>
+      <LastGenOutput>MarketingEntities.cs</LastGenOutput>
+    </Content>
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\_RemoveAccountPartial.cshtml" />
+    <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Manage.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\AbbottPerson\Create.cshtml" />
+    <Content Include="Views\AbbottPerson\Delete.cshtml" />
+    <Content Include="Views\AbbottPerson\Details.cshtml" />
+    <Content Include="Views\AbbottPerson\Edit.cshtml" />
+    <Content Include="Views\AbbottPerson\Index.cshtml" />
+    <Content Include="Views\Coinvestment\Create.cshtml" />
+    <Content Include="Views\Coinvestment\Delete.cshtml" />
+    <Content Include="Views\Coinvestment\Details.cshtml" />
+    <Content Include="Views\Coinvestment\Edit.cshtml" />
+    <Content Include="Views\Coinvestment\Index.cshtml" />
+    <Content Include="Views\Country\Create.cshtml" />
+    <Content Include="Views\Country\Delete.cshtml" />
+    <Content Include="Views\Country\Details.cshtml" />
+    <Content Include="Views\Country\Edit.cshtml" />
+    <Content Include="Views\Country\Index.cshtml" />
+    <Content Include="Views\Currency\Create.cshtml" />
+    <Content Include="Views\Currency\Delete.cshtml" />
+    <Content Include="Views\Currency\Details.cshtml" />
+    <Content Include="Views\Currency\Edit.cshtml" />
+    <Content Include="Views\Currency\Index.cshtml" />
+    <Content Include="Views\MailingList\Create.cshtml" />
+    <Content Include="Views\MailingList\Delete.cshtml" />
+    <Content Include="Views\MailingList\Details.cshtml" />
+    <Content Include="Views\MailingList\Edit.cshtml" />
+    <Content Include="Views\MailingList\Index.cshtml" />
+    <Content Include="Views\MarketingFrequency\Create.cshtml" />
+    <Content Include="Views\MarketingFrequency\Delete.cshtml" />
+    <Content Include="Views\MarketingFrequency\Details.cshtml" />
+    <Content Include="Views\MarketingFrequency\Edit.cshtml" />
+    <Content Include="Views\MarketingFrequency\Index.cshtml" />
+    <Content Include="Views\PEInvesting\Create.cshtml" />
+    <Content Include="Views\PEInvesting\Delete.cshtml" />
+    <Content Include="Views\PEInvesting\Details.cshtml" />
+    <Content Include="Views\PEInvesting\Edit.cshtml" />
+    <Content Include="Views\PEInvesting\Index.cshtml" />
+    <Content Include="Views\Priority\Create.cshtml" />
+    <Content Include="Views\Priority\Delete.cshtml" />
+    <Content Include="Views\Priority\Details.cshtml" />
+    <Content Include="Views\Priority\Edit.cshtml" />
+    <Content Include="Views\Priority\Index.cshtml" />
+    <Content Include="Views\ProductList\Create.cshtml" />
+    <Content Include="Views\ProductList\Delete.cshtml" />
+    <Content Include="Views\ProductList\Details.cshtml" />
+    <Content Include="Views\ProductList\Edit.cshtml" />
+    <Content Include="Views\ProductList\Index.cshtml" />
+    <Content Include="Views\Region\Create.cshtml" />
+    <Content Include="Views\Region\Delete.cshtml" />
+    <Content Include="Views\Region\Details.cshtml" />
+    <Content Include="Views\Region\Edit.cshtml" />
+    <Content Include="Views\Region\Index.cshtml" />
+    <Content Include="Views\RFPOutCome\Create.cshtml" />
+    <Content Include="Views\RFPOutCome\Delete.cshtml" />
+    <Content Include="Views\RFPOutCome\Details.cshtml" />
+    <Content Include="Views\RFPOutCome\Edit.cshtml" />
+    <Content Include="Views\RFPOutCome\Index.cshtml" />
+    <Content Include="Views\SeparateAccount\Create.cshtml" />
+    <Content Include="Views\SeparateAccount\Delete.cshtml" />
+    <Content Include="Views\SeparateAccount\Details.cshtml" />
+    <Content Include="Views\SeparateAccount\Edit.cshtml" />
+    <Content Include="Views\SeparateAccount\Index.cshtml" />
+    <Content Include="Views\Stage\Create.cshtml" />
+    <Content Include="Views\Stage\Delete.cshtml" />
+    <Content Include="Views\Stage\Details.cshtml" />
+    <Content Include="Views\Stage\Edit.cshtml" />
+    <Content Include="Views\Stage\Index.cshtml" />
+    <Content Include="Views\CompanyType\Create.cshtml" />
+    <Content Include="Views\CompanyType\Delete.cshtml" />
+    <Content Include="Views\CompanyType\Details.cshtml" />
+    <Content Include="Views\CompanyType\Edit.cshtml" />
+    <Content Include="Views\CompanyType\Index.cshtml" />
+    <Content Include="Views\Home\Library.cshtml" />
+    <Content Include="Views\Import\Index.cshtml" />
+    <Content Include="Views\Investors\Create.cshtml" />
+    <Content Include="Views\Investors\Delete.cshtml" />
+    <Content Include="Views\Investors\Details.cshtml" />
+    <Content Include="Views\Investors\Edit.cshtml" />
+    <Content Include="Views\Investors\Index.cshtml" />
+    <Content Include="Views\Contacts\Create.cshtml" />
+    <Content Include="Views\Contacts\Delete.cshtml" />
+    <Content Include="Views\Contacts\Details.cshtml" />
+    <Content Include="Views\Contacts\Edit.cshtml" />
+    <Content Include="Views\Contacts\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\TypeMetaData\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>54609</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:54399/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

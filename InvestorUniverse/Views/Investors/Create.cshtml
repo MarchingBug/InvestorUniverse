@@ -1,0 +1,443 @@
+﻿@model InvestorUniverse.Models.Investor
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Investor</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Name)
+                @Html.ValidationMessageFor(model => model.Name)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PEInvestingId, "PEInvestingId", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("PEInvestingId", String.Empty)
+                @Html.ValidationMessageFor(model => model.PEInvestingId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TypeId, "TypeId", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("TypeId", String.Empty)
+                @Html.ValidationMessageFor(model => model.TypeId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.RegionId, "RegionId", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("RegionId", String.Empty)
+                @Html.ValidationMessageFor(model => model.RegionId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Address1, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Address1)
+                @Html.ValidationMessageFor(model => model.Address1)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Address2, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Address2)
+                @Html.ValidationMessageFor(model => model.Address2)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.City, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.City)
+                @Html.ValidationMessageFor(model => model.City)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.State, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.State)
+                @Html.ValidationMessageFor(model => model.State)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Zip_Code, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Zip_Code)
+                @Html.ValidationMessageFor(model => model.Zip_Code)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CountryId, "CountryId", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("CountryId", String.Empty)
+                @Html.ValidationMessageFor(model => model.CountryId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Web, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Web)
+                @Html.ValidationMessageFor(model => model.Web)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Email)
+                @Html.ValidationMessageFor(model => model.Email)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Tel, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Tel)
+                @Html.ValidationMessageFor(model => model.Tel)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Fax, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Fax)
+                @Html.ValidationMessageFor(model => model.Fax)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Funds_under_Mgmt__mn_, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Funds_under_Mgmt__mn_)
+                @Html.ValidationMessageFor(model => model.Funds_under_Mgmt__mn_)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FundUnderManagementCurrencyId, "FundUnderManagementCurrencyId", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("FundUnderManagementCurrencyId", String.Empty)
+                @Html.ValidationMessageFor(model => model.FundUnderManagementCurrencyId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Funds_under_Mgmt__mn_USD_, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Funds_under_Mgmt__mn_USD_)
+                @Html.ValidationMessageFor(model => model.Funds_under_Mgmt__mn_USD_)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Funds_under_Mgmt__mn_EUR_, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Funds_under_Mgmt__mn_EUR_)
+                @Html.ValidationMessageFor(model => model.Funds_under_Mgmt__mn_EUR_)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Current_Allocation_to_PE____, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Current_Allocation_to_PE____)
+                @Html.ValidationMessageFor(model => model.Current_Allocation_to_PE____)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Current_Allocation_to_PE__mn_USD_, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Current_Allocation_to_PE__mn_USD_)
+                @Html.ValidationMessageFor(model => model.Current_Allocation_to_PE__mn_USD_)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Current_Allocation_to_PE__mn_EUR_, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Current_Allocation_to_PE__mn_EUR_)
+                @Html.ValidationMessageFor(model => model.Current_Allocation_to_PE__mn_EUR_)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Target_Allocation_to_PE____, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Target_Allocation_to_PE____)
+                @Html.ValidationMessageFor(model => model.Target_Allocation_to_PE____)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Target_Allocation_to_PE__mn_USD_, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Target_Allocation_to_PE__mn_USD_)
+                @Html.ValidationMessageFor(model => model.Target_Allocation_to_PE__mn_USD_)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Target_Allocation_to_PE__mn_EUR_, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Target_Allocation_to_PE__mn_EUR_)
+                @Html.ValidationMessageFor(model => model.Target_Allocation_to_PE__mn_EUR_)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Separate_Accounts_Committed_Capital___, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Separate_Accounts_Committed_Capital___)
+                @Html.ValidationMessageFor(model => model.Separate_Accounts_Committed_Capital___)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Separate_Accounts_Committed_Capital_USD_, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Separate_Accounts_Committed_Capital_USD_)
+                @Html.ValidationMessageFor(model => model.Separate_Accounts_Committed_Capital_USD_)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Separate_Accounts_Committed_Capital_EUR_, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Separate_Accounts_Committed_Capital_EUR_)
+                @Html.ValidationMessageFor(model => model.Separate_Accounts_Committed_Capital_EUR_)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Typical_Investment_Size__mn_, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Typical_Investment_Size__mn_)
+                @Html.ValidationMessageFor(model => model.Typical_Investment_Size__mn_)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Fund_Preferences, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Fund_Preferences)
+                @Html.ValidationMessageFor(model => model.Fund_Preferences)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Geographic_Preferences, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Geographic_Preferences)
+                @Html.ValidationMessageFor(model => model.Geographic_Preferences)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FirstTimeId, "FirstTimeId", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("FirstTimeId", String.Empty)
+                @Html.ValidationMessageFor(model => model.FirstTimeId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FirstCloseId, "FirstCloseId", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("FirstCloseId", String.Empty)
+                @Html.ValidationMessageFor(model => model.FirstCloseId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.First_Close_Investor, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.First_Close_Investor)
+                @Html.ValidationMessageFor(model => model.First_Close_Investor)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SeparateAccountId, "SeparateAccountId", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("SeparateAccountId", String.Empty)
+                @Html.ValidationMessageFor(model => model.SeparateAccountId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CoInvestmentsId, "CoInvestmentsId", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("CoInvestmentsId", String.Empty)
+                @Html.ValidationMessageFor(model => model.CoInvestmentsId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Co_Invest_with_GP, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Co_Invest_with_GP)
+                @Html.ValidationMessageFor(model => model.Co_Invest_with_GP)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Next12MonthCurrencyId, "Next12MonthCurrencyId", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("Next12MonthCurrencyId", String.Empty)
+                @Html.ValidationMessageFor(model => model.Next12MonthCurrencyId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Next_12_Months_Amount_min__mn_, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Next_12_Months_Amount_min__mn_)
+                @Html.ValidationMessageFor(model => model.Next_12_Months_Amount_min__mn_)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Next_12_Months_Amount_max__mn_, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Next_12_Months_Amount_max__mn_)
+                @Html.ValidationMessageFor(model => model.Next_12_Months_Amount_max__mn_)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Next_12_Months_Amount___mn__min, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Next_12_Months_Amount___mn__min)
+                @Html.ValidationMessageFor(model => model.Next_12_Months_Amount___mn__min)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Next_12_Months_Amount___mn__max, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Next_12_Months_Amount___mn__max)
+                @Html.ValidationMessageFor(model => model.Next_12_Months_Amount___mn__max)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Next_12_Months_Number_of_Funds__min_, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Next_12_Months_Number_of_Funds__min_)
+                @Html.ValidationMessageFor(model => model.Next_12_Months_Number_of_Funds__min_)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Next_12_Months_Number_of_Funds__max_, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Next_12_Months_Number_of_Funds__max_)
+                @Html.ValidationMessageFor(model => model.Next_12_Months_Number_of_Funds__max_)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Next_12_Months___Fund_Type_Preferences, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Next_12_Months___Fund_Type_Preferences)
+                @Html.ValidationMessageFor(model => model.Next_12_Months___Fund_Type_Preferences)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Date_of_12_Month_Plan, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Date_of_12_Month_Plan)
+                @Html.ValidationMessageFor(model => model.Date_of_12_Month_Plan)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.General_Consultants, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.General_Consultants)
+                @Html.ValidationMessageFor(model => model.General_Consultants)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Private_Equity_Consultants, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Private_Equity_Consultants)
+                @Html.ValidationMessageFor(model => model.Private_Equity_Consultants)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Stage, "Stage", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("Stage", String.Empty)
+                @Html.ValidationMessageFor(model => model.Stage)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.RFPOutcome, "RFPOutcome", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("RFPOutcome", String.Empty)
+                @Html.ValidationMessageFor(model => model.RFPOutcome)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.AbbottPerson, "AbbottPerson", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("AbbottPerson", String.Empty)
+                @Html.ValidationMessageFor(model => model.AbbottPerson)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MeetingFrequency, "MeetingFrequency", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("MeetingFrequency", String.Empty)
+                @Html.ValidationMessageFor(model => model.MeetingFrequency)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Priority, "Priority", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("Priority", String.Empty)
+                @Html.ValidationMessageFor(model => model.Priority)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

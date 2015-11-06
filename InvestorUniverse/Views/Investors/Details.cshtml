@@ -1,0 +1,419 @@
+﻿@model InvestorUniverse.Models.Investor
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Investor</h4>
+    <hr />
+
+    <div class="panel panel-default">
+        <div class="panel-heading">@Html.LabelFor(model => model.Name)</div>
+        <div class="panel-body">
+           @Html.DisplayFor(model => model.Name)
+        </div>
+    </div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Html.LabelFor(model => model.Address1)</div>
+    <div class="panel-body">
+        @Html.DisplayFor(model => model.Address1)
+    </div>
+</div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">@Html.LabelFor(model => model.Address2)</div>
+        <div class="panel-body">
+            @Html.DisplayFor(model => model.Address2)
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">@Html.LabelFor(model => model.City)</div>
+        <div class="panel-body">
+            @Html.DisplayFor(model => model.City)
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">@Html.LabelFor(model => model.State)</div>
+        <div class="panel-body">
+            @Html.DisplayFor(model => model.State)
+        </div>
+    </div>
+<div class="panel panel-default">
+    <div class="panel-heading">@Html.LabelFor(model => model.Zip_Code)</div>
+    <div class="panel-body">
+        @Html.DisplayFor(model => model.Zip_Code)
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Html.LabelFor(model => model.Country.Country1)</div>
+    <div class="panel-body">
+        @Html.DisplayFor(model => model.Country.Country1)
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Html.LabelFor(model => model.Web)</div>
+    <div class="panel-body">
+        @Html.DisplayFor(model => model.Web)
+    </div>
+</div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">@Html.LabelFor(model => model.Email)</div>
+        <div class="panel-body">
+            @Html.DisplayFor(model => model.Email)
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">@Html.LabelFor(model => model.Tel)</div>
+        <div class="panel-body">
+            @Html.DisplayFor(model => model.Tel)
+        </div>
+    </div>
+
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Html.LabelFor(model => model.Fax)</div>
+    <div class="panel-body">
+        @Html.DisplayFor(model => model.Fax)
+    </div>
+</div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading"><strong>Fund to Funds Currency</strong></div>
+        <div class="panel-body">
+            @Html.DisplayFor(model => model.Currency1.Currency1)
+        </div>
+    </div>
+
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Html.LabelFor(model => model.Funds_under_Mgmt__mn_)</div>
+    <div class="panel-body">
+        @Html.DisplayFor(model => model.Funds_under_Mgmt__mn_)
+    </div>
+</div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">@Html.LabelFor(model => model.Funds_under_Mgmt__mn_USD_)</div>
+        <div class="panel-body">
+            @Html.DisplayFor(model => model.Funds_under_Mgmt__mn_USD_)
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">@Html.LabelFor(model => model.Funds_under_Mgmt__mn_EUR_)</div>
+        <div class="panel-body">
+            @Html.DisplayFor(model => model.Funds_under_Mgmt__mn_EUR_)
+        </div>
+    </div>
+
+
+
+    <div class="panel panel-default">
+        <div class="panel-heading">@Html.LabelFor(model => model.Current_Allocation_to_PE____)</div>
+        <div class="panel-body">
+            @Html.DisplayFor(model => model.Current_Allocation_to_PE____)
+        </div>
+    </div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Html.LabelFor(model => model.Current_Allocation_to_PE__mn_USD_)</div>
+    <div class="panel-body">
+        @Html.DisplayFor(model => model.Current_Allocation_to_PE__mn_USD_)
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Html.LabelFor(model => model.Current_Allocation_to_PE__mn_EUR_)</div>
+    <div class="panel-body">
+        @Html.DisplayFor(model => model.Current_Allocation_to_PE__mn_EUR_)
+    </div>
+</div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">@Html.LabelFor(model => model.Target_Allocation_to_PE____)</div>
+        <div class="panel-body">
+            @Html.DisplayFor(model => model.Target_Allocation_to_PE____)
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">@Html.LabelFor(model => model.Target_Allocation_to_PE__mn_USD_)</div>
+        <div class="panel-body">
+            @Html.DisplayFor(model => model.Target_Allocation_to_PE__mn_USD_)
+        </div>
+    </div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Html.LabelFor(model => model.Target_Allocation_to_PE__mn_EUR_)</div>
+    <div class="panel-body">
+        @Html.DisplayFor(model => model.Target_Allocation_to_PE__mn_EUR_)
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Html.LabelFor(model => model.Separate_Accounts_Committed_Capital___)</div>
+    <div class="panel-body">
+        @Html.DisplayFor(model => model.Separate_Accounts_Committed_Capital___)
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Html.LabelFor(model => model.Separate_Accounts_Committed_Capital_USD_)</div>
+    <div class="panel-body">
+        @Html.DisplayFor(model => model.Separate_Accounts_Committed_Capital_USD_)
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Html.LabelFor(model => model.Separate_Accounts_Committed_Capital_EUR_)</div>
+    <div class="panel-body">
+        @Html.DisplayFor(model => model.Separate_Accounts_Committed_Capital_EUR_)
+    </div>
+</div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">@Html.LabelFor(model => model.Typical_Investment_Size__mn_)</div>
+        <div class="panel-body">
+            @Html.DisplayFor(model => model.Typical_Investment_Size__mn_)
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">@Html.LabelFor(model => model.Fund_Preferences)</div>
+        <div class="panel-body">
+            @Html.DisplayFor(model => model.Fund_Preferences)
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">@Html.LabelFor(model => model.Geographic_Preferences)</div>
+        <div class="panel-body">
+            @Html.DisplayFor(model => model.Geographic_Preferences)
+        </div>
+    </div>
+
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Html.LabelFor(model => model.First_Close_Investor)</div>
+    <div class="panel-body">
+        @Html.DisplayFor(model => model.First_Close_Investor)
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Html.LabelFor(model => model.Co_Invest_with_GP)</div>
+    <div class="panel-body">
+        @Html.DisplayFor(model => model.Co_Invest_with_GP)
+    </div>
+</div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading"><strong>Next 12 Month Investment Currency</strong></div>
+        <div class="panel-body">
+            @Html.DisplayFor(model => model.Currency.Currency1)
+        </div>
+    </div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Html.LabelFor(model => model.Next_12_Months_Amount_min__mn_)</div>
+    <div class="panel-body">
+        @Html.DisplayFor(model => model.Next_12_Months_Amount_min__mn_)
+    </div>
+</div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">@Html.LabelFor(model => model.Next_12_Months_Amount_max__mn_)</div>
+        <div class="panel-body">
+            @Html.DisplayFor(model => model.Next_12_Months_Amount_max__mn_)
+        </div>
+    </div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Html.LabelFor(model => model.Next_12_Months_Amount___mn__min)</div>
+    <div class="panel-body">
+        @Html.DisplayFor(model => model.Next_12_Months_Amount___mn__min)
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Html.LabelFor(model => model.Next_12_Months_Amount___mn__max)</div>
+    <div class="panel-body">
+        @Html.DisplayFor(model => model.Next_12_Months_Amount___mn__max)
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Html.LabelFor(model => model.Next_12_Months_Number_of_Funds__min_)</div>
+    <div class="panel-body">
+        @Html.DisplayFor(model => model.Next_12_Months_Number_of_Funds__min_)
+    </div>
+</div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">@Html.LabelFor(model => model.Next_12_Months_Number_of_Funds__max_)</div>
+        <div class="panel-body">
+            @Html.DisplayFor(model => model.Next_12_Months_Number_of_Funds__max_)
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">@Html.LabelFor(model => model.Next_12_Months___Fund_Type_Preferences)</div>
+        <div class="panel-body">
+            @Html.DisplayFor(model => model.Next_12_Months___Fund_Type_Preferences)
+        </div>
+    </div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Html.LabelFor(model => model.Date_of_12_Month_Plan)</div>
+    <div class="panel-body">
+        @Html.DisplayFor(model => model.Date_of_12_Month_Plan)
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Html.LabelFor(model => model.General_Consultants)</div>
+    <div class="panel-body">
+        @Html.DisplayFor(model => model.General_Consultants)
+    </div>
+</div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">@Html.LabelFor(model => model.Private_Equity_Consultants)</div>
+        <div class="panel-body">
+            @Html.DisplayFor(model => model.Private_Equity_Consultants)
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">@Html.LabelFor(model => model.AbbottPerson1)</div>
+        <div class="panel-body">
+            @Html.DisplayFor(model => model.AbbottPerson1)
+        </div>
+    </div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Html.LabelFor(model => model.Coinvestment.Coinvestments)</div>
+    <div class="panel-body">
+        @Html.DisplayFor(model => model.Coinvestment.Coinvestments)
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Html.LabelFor(model => model.CompanyType.Type)</div>
+    <div class="panel-body">
+        @Html.DisplayFor(model => model.CompanyType.Type)
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Html.LabelFor(model => model.FirstClose.FirstClose1)</div>
+    <div class="panel-body">
+        @Html.DisplayFor(model => model.FirstClose.FirstClose1)
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Html.LabelFor(model => model.FirstTime.FirstTime1)</div>
+    <div class="panel-body">
+        @Html.DisplayFor(model => model.FirstTime.FirstTime1)
+    </div>
+</div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">@Html.LabelFor(model => model.MeetingFrequency1.MeetingFrequency1)</div>
+        <div class="panel-body">
+            @Html.DisplayFor(model => model.MeetingFrequency1.MeetingFrequency1)
+        </div>
+    </div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Html.LabelFor(model => model.PEInvesting.PEInvesting1)</div>
+    <div class="panel-body">
+        @Html.DisplayFor(model => model.PEInvesting.PEInvesting1)
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Html.LabelFor(model => model.Priority1.Priority1)</div>
+    <div class="panel-body">
+        @Html.DisplayFor(model => model.Priority1.Priority1)
+    </div>
+</div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">@Html.LabelFor(model => model.Priority1.Priority1)</div>
+        <div class="panel-body">
+            @Html.DisplayFor(model => model.Priority1.Priority1)
+        </div>
+    </div>
+
+
+
+    <div class="panel panel-default">
+        <div class="panel-heading">@Html.LabelFor(model => model.Region.Region1)</div>
+        <div class="panel-body">
+            @Html.DisplayFor(model => model.Region.Region1)
+        </div>
+    </div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Html.LabelFor(model => model.RFPOutCome1.RFPOutCome1)</div>
+    <div class="panel-body">
+        @Html.DisplayFor(model => model.RFPOutCome1.RFPOutCome1)
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Html.LabelFor(model => model.SeparateAccount.SeparateAccount1)</div>
+    <div class="panel-body">
+        @Html.DisplayFor(model => model.SeparateAccount.SeparateAccount1)
+    </div>
+</div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">@Html.LabelFor(model => model.Stage1.Stage1)</div>
+        <div class="panel-body">
+            @Html.DisplayFor(model => model.Stage1.Stage1)
+        </div>
+    </div>
+
+   
+
+<dl > 
+
+      
+
+     
+
+     
+
+        <dt>
+            Fund to Funds Currency
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Currency1.Currency1)
+        </dd>
+
+       
+
+      
+
+      
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

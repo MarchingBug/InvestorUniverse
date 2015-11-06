@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f50abefe27eb4f6b9f8ce2dcb00b6b1d" Name="Diagram1" ZoomLevel="42">
+        <EntityTypeShape EntityType="MarketingModel.AbbottPerson" Width="1.5" PointX="3.75" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarketingModel.Coinvestment" Width="1.5" PointX="3.75" PointY="20" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarketingModel.CompanyType" Width="1.5" PointX="0.75" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarketingModel.Contact" Width="1.5" PointX="3" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarketingModel.Country" Width="1.5" PointX="0.75" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarketingModel.Currency" Width="1.5" PointX="3.75" PointY="23.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarketingModel.FirstClose" Width="1.5" PointX="3.75" PointY="26.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarketingModel.FirstTime" Width="1.5" PointX="3.75" PointY="29.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarketingModel.Intralink" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarketingModel.InvestorNote" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarketingModel.MailingList" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarketingModel.MeetingFrequency" Width="1.5" PointX="3.75" PointY="32.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarketingModel.PEInvesting" Width="1.5" PointX="3.75" PointY="35.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarketingModel.Priority" Width="1.5" PointX="3.75" PointY="39" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarketingModel.ProductList" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarketingModel.Region" Width="1.5" PointX="3.75" PointY="42" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarketingModel.RFPOutCome" Width="1.5" PointX="3.75" PointY="45.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarketingModel.SeparateAccount" Width="1.5" PointX="3.75" PointY="48.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarketingModel.Stage" Width="1.5" PointX="3.75" PointY="51.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarketingModel.sysdiagram" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarketingModel.InvestorStage" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="MarketingModel.FK_Contacts_Type" ManuallyRouted="false" />
+        <AssociationConnector Association="MarketingModel.FK_Contacts_Country" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="MarketingModel.Industry" Width="1.5" PointX="6.375" PointY="23" />
+        <EntityTypeShape EntityType="MarketingModel.InvestorIndustry" Width="1.5" PointX="8.625" PointY="11.875" />
+        <EntityTypeShape EntityType="MarketingModel.InvestorRegion" Width="1.5" PointX="8.625" PointY="23.25" />
+        <EntityTypeShape EntityType="MarketingModel.Type" Width="1.5" PointX="0.75" PointY="7.75" />
+        <AssociationConnector Association="MarketingModel.FK_InvestorIndustries_Industry" />
+        <AssociationConnector Association="MarketingModel.FK_InvestorRegions_Region" />
+        <AssociationConnector Association="MarketingModel.FK_InvestorStages_Stage" />
+        <EntityTypeShape EntityType="MarketingModel.Investor" Width="1.5" PointX="6" PointY="26.125" />
+        <AssociationConnector Association="MarketingModel.FK_Investors_AbbottPerson" />
+        <AssociationConnector Association="MarketingModel.FK_Investors_Coinvestments" />
+        <AssociationConnector Association="MarketingModel.FK_Investors_Type" />
+        <AssociationConnector Association="MarketingModel.FK_Contacts_Investors" />
+        <AssociationConnector Association="MarketingModel.FK_Investors_Country" />
+        <AssociationConnector Association="MarketingModel.FK_Investors_Currency" />
+        <AssociationConnector Association="MarketingModel.FK_Investors_Currency1" />
+        <AssociationConnector Association="MarketingModel.FK_Investors_Currency2" />
+        <AssociationConnector Association="MarketingModel.FK_Investors_Currency3" />
+        <AssociationConnector Association="MarketingModel.FK_Investors_FirstClose" />
+        <AssociationConnector Association="MarketingModel.FK_Investors_FirstTime" />
+        <AssociationConnector Association="MarketingModel.FK_InvestorIndustries_InvestorIndustries" />
+        <AssociationConnector Association="MarketingModel.FK_InvestorRegions_Investors" />
+        <AssociationConnector Association="MarketingModel.FK_Investors_MeetingFrequency" />
+        <AssociationConnector Association="MarketingModel.FK_Investors_PEInvesting" />
+        <AssociationConnector Association="MarketingModel.FK_Investors_Priority" />
+        <AssociationConnector Association="MarketingModel.FK_Investors_Region" />
+        <AssociationConnector Association="MarketingModel.FK_Investors_RFPOutCome" />
+        <AssociationConnector Association="MarketingModel.FK_Investors_SeparateAccount" />
+        <AssociationConnector Association="MarketingModel.FK_Investors_Stage" />
+        <AssociationConnector Association="MarketingModel.FK_InvestorStages_Investors" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

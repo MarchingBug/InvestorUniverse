@@ -1,0 +1,2046 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MarketingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AbbottPerson">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AbbottPerson" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="20" />
+          <Property Name="ModifiedOn" Type="datetime" />
+          <Property Name="ModifiedBy" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Coinvestments">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Coinvestments" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="20" />
+          <Property Name="ModifiedOn" Type="datetime" />
+          <Property Name="ModifiedBy" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="CompanyType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Type" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="20" />
+          <Property Name="ModifiedOn" Type="datetime" />
+          <Property Name="ModifiedBy" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Contacts">
+          <Key>
+            <PropertyRef Name="ContactId" />
+          </Key>
+          <Property Name="ContactId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="InvestorId" Type="int" />
+          <Property Name="TypeId" Type="int" />
+          <Property Name="Title" Type="nvarchar" MaxLength="255" />
+          <Property Name="Firstname" Type="nvarchar" MaxLength="255" />
+          <Property Name="Surname" Type="nvarchar" MaxLength="255" />
+          <Property Name="Job Title" Type="nvarchar" MaxLength="255" />
+          <Property Name="Email" Type="nvarchar" MaxLength="255" />
+          <Property Name="Tel" Type="nvarchar" MaxLength="255" />
+          <Property Name="Address1" Type="nvarchar" MaxLength="255" />
+          <Property Name="Address2" Type="nvarchar" MaxLength="255" />
+          <Property Name="City" Type="nvarchar" MaxLength="255" />
+          <Property Name="State" Type="nvarchar" MaxLength="255" />
+          <Property Name="CountryId" Type="int" />
+          <Property Name="Zip Code" Type="float" />
+          <Property Name="Investor" Type="nvarchar" MaxLength="255" />
+          <Property Name="Country" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Country" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="20" />
+          <Property Name="ModifiedOn" Type="datetime" />
+          <Property Name="ModifiedBy" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Currency">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Currency" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="20" />
+          <Property Name="ModifiedOn" Type="datetime" />
+          <Property Name="ModifiedBy" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="FirstClose">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstClose" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="20" />
+          <Property Name="ModifiedOn" Type="datetime" />
+          <Property Name="ModifiedBy" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="FirstTime">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstTime" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="20" />
+          <Property Name="ModifiedOn" Type="datetime" />
+          <Property Name="ModifiedBy" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Industry">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="20" />
+          <Property Name="ModifiedOn" Type="datetime" />
+          <Property Name="ModifiedBy" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Intralinks">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Intralinks" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="20" />
+          <Property Name="ModifiedOn" Type="datetime" />
+          <Property Name="ModifiedBy" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="InvestorIndustries">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="InvestorId" Type="int" />
+          <Property Name="IndustryId" Type="int" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="20" />
+          <Property Name="ModifiedOn" Type="datetime" />
+          <Property Name="ModifiedBy" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="InvestorNotes">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="InvestorId" Type="int" />
+          <Property Name="Notes" Type="varchar(max)" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="10" />
+          <Property Name="ModifiedOn" Type="datetime" />
+          <Property Name="ModifiedBy" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="InvestorRegions">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="InvestorId" Type="int" />
+          <Property Name="RegionId" Type="int" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="20" />
+          <Property Name="ModifiedOn" Type="datetime" />
+          <Property Name="ModifiedBy" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Investors">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="PEInvestingId" Type="int" />
+          <Property Name="TypeId" Type="int" />
+          <Property Name="RegionId" Type="int" />
+          <Property Name="Address1" Type="nvarchar" MaxLength="255" />
+          <Property Name="Address2" Type="nvarchar" MaxLength="255" />
+          <Property Name="City" Type="nvarchar" MaxLength="255" />
+          <Property Name="State" Type="nvarchar" MaxLength="255" />
+          <Property Name="Zip Code" Type="float" />
+          <Property Name="CountryId" Type="int" />
+          <Property Name="Web" Type="nvarchar" MaxLength="255" />
+          <Property Name="Email" Type="nvarchar" MaxLength="255" />
+          <Property Name="Tel" Type="nvarchar" MaxLength="255" />
+          <Property Name="Fax" Type="nvarchar" MaxLength="255" />
+          <Property Name="Funds under Mgmt (mn)" Type="float" />
+          <Property Name="FundUnderManagementCurrencyId" Type="int" />
+          <Property Name="Funds under Mgmt (mn USD)" Type="float" />
+          <Property Name="Funds under Mgmt (mn EUR)" Type="float" />
+          <Property Name="Current Allocation to PE (%)" Type="float" />
+          <Property Name="Current Allocation to PE (mn USD)" Type="float" />
+          <Property Name="Current Allocation to PE (mn EUR)" Type="float" />
+          <Property Name="Target Allocation to PE (%)" Type="nvarchar" MaxLength="255" />
+          <Property Name="Target Allocation to PE (mn USD)" Type="nvarchar" MaxLength="255" />
+          <Property Name="Target Allocation to PE (mn EUR)" Type="nvarchar" MaxLength="255" />
+          <Property Name="Separate Accounts Committed Capital(%)" Type="nvarchar" MaxLength="255" />
+          <Property Name="Separate Accounts Committed Capital(USD)" Type="nvarchar" MaxLength="255" />
+          <Property Name="Separate Accounts Committed Capital(EUR)" Type="nvarchar" MaxLength="255" />
+          <Property Name="Typical Investment Size (mn)" Type="nvarchar" MaxLength="255" />
+          <Property Name="Fund Preferences" Type="nvarchar" MaxLength="255" />
+          <Property Name="Geographic Preferences" Type="nvarchar" MaxLength="255" />
+          <Property Name="FirstTimeId" Type="int" />
+          <Property Name="FirstCloseId" Type="int" />
+          <Property Name="First-Close Investor" Type="nvarchar" MaxLength="255" />
+          <Property Name="SeparateAccountId" Type="int" />
+          <Property Name="CoInvestmentsId" Type="int" />
+          <Property Name="Co-Invest with GP" Type="nvarchar" MaxLength="255" />
+          <Property Name="Next12MonthCurrencyId" Type="int" />
+          <Property Name="Next 12 Months Amount min (mn)" Type="float" />
+          <Property Name="Next 12 Months Amount max (mn)" Type="float" />
+          <Property Name="Next 12 Months Amount ($mn) min" Type="float" />
+          <Property Name="Next 12 Months Amount ($mn) max" Type="float" />
+          <Property Name="Next 12 Months Number of Funds (min)" Type="float" />
+          <Property Name="Next 12 Months Number of Funds (max)" Type="float" />
+          <Property Name="Next 12 Months - Fund Type Preferences" Type="nvarchar" MaxLength="255" />
+          <Property Name="Date of 12 Month Plan" Type="datetime" />
+          <Property Name="General Consultants" Type="nvarchar" MaxLength="255" />
+          <Property Name="Private Equity Consultants" Type="nvarchar" MaxLength="255" />
+          <Property Name="Stage" Type="int" />
+          <Property Name="RFPOutcome" Type="int" />
+          <Property Name="AbbottPerson" Type="int" />
+          <Property Name="MeetingFrequency" Type="int" />
+          <Property Name="Priority" Type="int" />
+        </EntityType>
+        <EntityType Name="InvestorStages">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="InvestorId" Type="int" />
+          <Property Name="Stage" Type="int" />
+          <Property Name="Notes" Type="varchar(max)" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="10" />
+          <Property Name="ModifiedOn" Type="datetime" />
+          <Property Name="ModifiedBy" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="MailingList">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MailingList" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="20" />
+          <Property Name="ModifiedOn" Type="datetime" />
+          <Property Name="ModifiedBy" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="MeetingFrequency">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MeetingFrequency" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="20" />
+          <Property Name="ModifiedOn" Type="datetime" />
+          <Property Name="ModifiedBy" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="PEInvesting">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PEInvesting" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="20" />
+          <Property Name="ModifiedOn" Type="datetime" />
+          <Property Name="ModifiedBy" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Priority">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Priority" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="20" />
+          <Property Name="ModifiedOn" Type="datetime" />
+          <Property Name="ModifiedBy" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="ProductList">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductList" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="20" />
+          <Property Name="ModifiedOn" Type="datetime" />
+          <Property Name="ModifiedBy" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Region">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Region" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="20" />
+          <Property Name="ModifiedOn" Type="datetime" />
+          <Property Name="ModifiedBy" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="RFPOutCome">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RFPOutCome" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="20" />
+          <Property Name="ModifiedOn" Type="datetime" />
+          <Property Name="ModifiedBy" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="SeparateAccount">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SeparateAccount" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="20" />
+          <Property Name="ModifiedOn" Type="datetime" />
+          <Property Name="ModifiedBy" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Stage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Stage" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="20" />
+          <Property Name="ModifiedOn" Type="datetime" />
+          <Property Name="ModifiedBy" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Marketing.dbo.Types' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Types">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Type" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_Contacts_Country">
+          <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+          <End Role="Contacts" Type="Self.Contacts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Contacts">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contacts_Investors">
+          <End Role="Investors" Type="Self.Investors" Multiplicity="0..1" />
+          <End Role="Contacts" Type="Self.Contacts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Investors">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Contacts">
+              <PropertyRef Name="InvestorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contacts_Type">
+          <End Role="CompanyType" Type="Self.CompanyType" Multiplicity="0..1" />
+          <End Role="Contacts" Type="Self.Contacts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CompanyType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Contacts">
+              <PropertyRef Name="TypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InvestorIndustries_Industry">
+          <End Role="Industry" Type="Self.Industry" Multiplicity="0..1" />
+          <End Role="InvestorIndustries" Type="Self.InvestorIndustries" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Industry">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="InvestorIndustries">
+              <PropertyRef Name="IndustryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InvestorIndustries_InvestorIndustries">
+          <End Role="Investors" Type="Self.Investors" Multiplicity="0..1" />
+          <End Role="InvestorIndustries" Type="Self.InvestorIndustries" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Investors">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="InvestorIndustries">
+              <PropertyRef Name="InvestorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InvestorRegions_Investors">
+          <End Role="Investors" Type="Self.Investors" Multiplicity="0..1" />
+          <End Role="InvestorRegions" Type="Self.InvestorRegions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Investors">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="InvestorRegions">
+              <PropertyRef Name="InvestorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InvestorRegions_Region">
+          <End Role="Region" Type="Self.Region" Multiplicity="0..1" />
+          <End Role="InvestorRegions" Type="Self.InvestorRegions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Region">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="InvestorRegions">
+              <PropertyRef Name="RegionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Investors_AbbottPerson">
+          <End Role="AbbottPerson" Type="Self.AbbottPerson" Multiplicity="0..1" />
+          <End Role="Investors" Type="Self.Investors" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AbbottPerson">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Investors">
+              <PropertyRef Name="AbbottPerson" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Investors_Coinvestments">
+          <End Role="Coinvestments" Type="Self.Coinvestments" Multiplicity="0..1" />
+          <End Role="Investors" Type="Self.Investors" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Coinvestments">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Investors">
+              <PropertyRef Name="CoInvestmentsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Investors_Country">
+          <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+          <End Role="Investors" Type="Self.Investors" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Investors">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Investors_Currency">
+          <End Role="Currency" Type="Self.Currency" Multiplicity="0..1" />
+          <End Role="Investors" Type="Self.Investors" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Currency">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Investors">
+              <PropertyRef Name="Next12MonthCurrencyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Investors_Currency1">
+          <End Role="Currency" Type="Self.Currency" Multiplicity="0..1" />
+          <End Role="Investors" Type="Self.Investors" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Currency">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Investors">
+              <PropertyRef Name="FundUnderManagementCurrencyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Investors_Currency2">
+          <End Role="Currency" Type="Self.Currency" Multiplicity="0..1" />
+          <End Role="Investors" Type="Self.Investors" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Currency">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Investors">
+              <PropertyRef Name="FundUnderManagementCurrencyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Investors_Currency3">
+          <End Role="Currency" Type="Self.Currency" Multiplicity="0..1" />
+          <End Role="Investors" Type="Self.Investors" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Currency">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Investors">
+              <PropertyRef Name="Next12MonthCurrencyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Investors_FirstClose">
+          <End Role="FirstClose" Type="Self.FirstClose" Multiplicity="0..1" />
+          <End Role="Investors" Type="Self.Investors" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FirstClose">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Investors">
+              <PropertyRef Name="FirstCloseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Investors_FirstTime">
+          <End Role="FirstTime" Type="Self.FirstTime" Multiplicity="0..1" />
+          <End Role="Investors" Type="Self.Investors" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FirstTime">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Investors">
+              <PropertyRef Name="FirstTimeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Investors_MeetingFrequency">
+          <End Role="MeetingFrequency" Type="Self.MeetingFrequency" Multiplicity="0..1" />
+          <End Role="Investors" Type="Self.Investors" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MeetingFrequency">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Investors">
+              <PropertyRef Name="MeetingFrequency" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Investors_PEInvesting">
+          <End Role="PEInvesting" Type="Self.PEInvesting" Multiplicity="0..1" />
+          <End Role="Investors" Type="Self.Investors" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PEInvesting">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Investors">
+              <PropertyRef Name="PEInvestingId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Investors_Priority">
+          <End Role="Priority" Type="Self.Priority" Multiplicity="0..1" />
+          <End Role="Investors" Type="Self.Investors" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Priority">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Investors">
+              <PropertyRef Name="Priority" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Investors_Region">
+          <End Role="Region" Type="Self.Region" Multiplicity="0..1" />
+          <End Role="Investors" Type="Self.Investors" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Region">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Investors">
+              <PropertyRef Name="RegionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Investors_RFPOutCome">
+          <End Role="RFPOutCome" Type="Self.RFPOutCome" Multiplicity="0..1" />
+          <End Role="Investors" Type="Self.Investors" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RFPOutCome">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Investors">
+              <PropertyRef Name="RFPOutcome" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Investors_SeparateAccount">
+          <End Role="SeparateAccount" Type="Self.SeparateAccount" Multiplicity="0..1" />
+          <End Role="Investors" Type="Self.Investors" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SeparateAccount">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Investors">
+              <PropertyRef Name="SeparateAccountId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Investors_Stage">
+          <End Role="Stage" Type="Self.Stage" Multiplicity="0..1" />
+          <End Role="Investors" Type="Self.Investors" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stage">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Investors">
+              <PropertyRef Name="Stage" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Investors_Type">
+          <End Role="CompanyType" Type="Self.CompanyType" Multiplicity="0..1" />
+          <End Role="Investors" Type="Self.Investors" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CompanyType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Investors">
+              <PropertyRef Name="TypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InvestorStages_Investors">
+          <End Role="Investors" Type="Self.Investors" Multiplicity="0..1" />
+          <End Role="InvestorStages" Type="Self.InvestorStages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Investors">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="InvestorStages">
+              <PropertyRef Name="InvestorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InvestorStages_Stage">
+          <End Role="Stage" Type="Self.Stage" Multiplicity="0..1" />
+          <End Role="InvestorStages" Type="Self.InvestorStages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stage">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="InvestorStages">
+              <PropertyRef Name="Stage" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MarketingModelStoreContainer">
+          <EntitySet Name="AbbottPerson" EntityType="Self.AbbottPerson" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Coinvestments" EntityType="Self.Coinvestments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CompanyType" EntityType="Self.CompanyType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Contacts" EntityType="Self.Contacts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Currency" EntityType="Self.Currency" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FirstClose" EntityType="Self.FirstClose" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FirstTime" EntityType="Self.FirstTime" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Industry" EntityType="Self.Industry" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Intralinks" EntityType="Self.Intralinks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="InvestorIndustries" EntityType="Self.InvestorIndustries" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="InvestorNotes" EntityType="Self.InvestorNotes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="InvestorRegions" EntityType="Self.InvestorRegions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Investors" EntityType="Self.Investors" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="InvestorStages" EntityType="Self.InvestorStages" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MailingList" EntityType="Self.MailingList" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MeetingFrequency" EntityType="Self.MeetingFrequency" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PEInvesting" EntityType="Self.PEInvesting" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Priority" EntityType="Self.Priority" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductList" EntityType="Self.ProductList" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Region" EntityType="Self.Region" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RFPOutCome" EntityType="Self.RFPOutCome" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SeparateAccount" EntityType="Self.SeparateAccount" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Stage" EntityType="Self.Stage" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Types" EntityType="Self.Types" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Types].[Id] AS [Id], 
+    [Types].[Type] AS [Type]
+    FROM [dbo].[Types] AS [Types]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Contacts_Country" Association="Self.FK_Contacts_Country">
+            <End Role="Country" EntitySet="Country" />
+            <End Role="Contacts" EntitySet="Contacts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contacts_Investors" Association="Self.FK_Contacts_Investors">
+            <End Role="Investors" EntitySet="Investors" />
+            <End Role="Contacts" EntitySet="Contacts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contacts_Type" Association="Self.FK_Contacts_Type">
+            <End Role="CompanyType" EntitySet="CompanyType" />
+            <End Role="Contacts" EntitySet="Contacts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InvestorIndustries_Industry" Association="Self.FK_InvestorIndustries_Industry">
+            <End Role="Industry" EntitySet="Industry" />
+            <End Role="InvestorIndustries" EntitySet="InvestorIndustries" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InvestorIndustries_InvestorIndustries" Association="Self.FK_InvestorIndustries_InvestorIndustries">
+            <End Role="Investors" EntitySet="Investors" />
+            <End Role="InvestorIndustries" EntitySet="InvestorIndustries" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InvestorRegions_Investors" Association="Self.FK_InvestorRegions_Investors">
+            <End Role="Investors" EntitySet="Investors" />
+            <End Role="InvestorRegions" EntitySet="InvestorRegions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InvestorRegions_Region" Association="Self.FK_InvestorRegions_Region">
+            <End Role="Region" EntitySet="Region" />
+            <End Role="InvestorRegions" EntitySet="InvestorRegions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Investors_AbbottPerson" Association="Self.FK_Investors_AbbottPerson">
+            <End Role="AbbottPerson" EntitySet="AbbottPerson" />
+            <End Role="Investors" EntitySet="Investors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Investors_Coinvestments" Association="Self.FK_Investors_Coinvestments">
+            <End Role="Coinvestments" EntitySet="Coinvestments" />
+            <End Role="Investors" EntitySet="Investors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Investors_Country" Association="Self.FK_Investors_Country">
+            <End Role="Country" EntitySet="Country" />
+            <End Role="Investors" EntitySet="Investors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Investors_Currency" Association="Self.FK_Investors_Currency">
+            <End Role="Currency" EntitySet="Currency" />
+            <End Role="Investors" EntitySet="Investors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Investors_Currency1" Association="Self.FK_Investors_Currency1">
+            <End Role="Currency" EntitySet="Currency" />
+            <End Role="Investors" EntitySet="Investors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Investors_Currency2" Association="Self.FK_Investors_Currency2">
+            <End Role="Currency" EntitySet="Currency" />
+            <End Role="Investors" EntitySet="Investors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Investors_Currency3" Association="Self.FK_Investors_Currency3">
+            <End Role="Currency" EntitySet="Currency" />
+            <End Role="Investors" EntitySet="Investors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Investors_FirstClose" Association="Self.FK_Investors_FirstClose">
+            <End Role="FirstClose" EntitySet="FirstClose" />
+            <End Role="Investors" EntitySet="Investors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Investors_FirstTime" Association="Self.FK_Investors_FirstTime">
+            <End Role="FirstTime" EntitySet="FirstTime" />
+            <End Role="Investors" EntitySet="Investors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Investors_MeetingFrequency" Association="Self.FK_Investors_MeetingFrequency">
+            <End Role="MeetingFrequency" EntitySet="MeetingFrequency" />
+            <End Role="Investors" EntitySet="Investors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Investors_PEInvesting" Association="Self.FK_Investors_PEInvesting">
+            <End Role="PEInvesting" EntitySet="PEInvesting" />
+            <End Role="Investors" EntitySet="Investors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Investors_Priority" Association="Self.FK_Investors_Priority">
+            <End Role="Priority" EntitySet="Priority" />
+            <End Role="Investors" EntitySet="Investors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Investors_Region" Association="Self.FK_Investors_Region">
+            <End Role="Region" EntitySet="Region" />
+            <End Role="Investors" EntitySet="Investors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Investors_RFPOutCome" Association="Self.FK_Investors_RFPOutCome">
+            <End Role="RFPOutCome" EntitySet="RFPOutCome" />
+            <End Role="Investors" EntitySet="Investors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Investors_SeparateAccount" Association="Self.FK_Investors_SeparateAccount">
+            <End Role="SeparateAccount" EntitySet="SeparateAccount" />
+            <End Role="Investors" EntitySet="Investors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Investors_Stage" Association="Self.FK_Investors_Stage">
+            <End Role="Stage" EntitySet="Stage" />
+            <End Role="Investors" EntitySet="Investors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Investors_Type" Association="Self.FK_Investors_Type">
+            <End Role="CompanyType" EntitySet="CompanyType" />
+            <End Role="Investors" EntitySet="Investors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InvestorStages_Investors" Association="Self.FK_InvestorStages_Investors">
+            <End Role="Investors" EntitySet="Investors" />
+            <End Role="InvestorStages" EntitySet="InvestorStages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InvestorStages_Stage" Association="Self.FK_InvestorStages_Stage">
+            <End Role="Stage" EntitySet="Stage" />
+            <End Role="InvestorStages" EntitySet="InvestorStages" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MarketingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AbbottPerson">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AbbottPerson1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Investors" Relationship="MarketingModel.FK_Investors_AbbottPerson" FromRole="AbbottPerson" ToRole="Investor" />
+        </EntityType>
+        <EntityType Name="Coinvestment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Coinvestments" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Investors" Relationship="MarketingModel.FK_Investors_Coinvestments" FromRole="Coinvestment" ToRole="Investor" />
+        </EntityType>
+        <EntityType Name="CompanyType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Contacts" Relationship="Self.FK_Contacts_Type" FromRole="CompanyType" ToRole="Contacts" />
+          <NavigationProperty Name="Investors" Relationship="MarketingModel.FK_Investors_Type" FromRole="CompanyType" ToRole="Investor" />
+        </EntityType>
+        <EntityType Name="Contact">
+          <Key>
+            <PropertyRef Name="ContactId" />
+          </Key>
+          <Property Name="ContactId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="InvestorId" Type="Int32" />
+          <Property Name="TypeId" Type="Int32" />
+          <Property Name="Title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Firstname" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Surname" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Job_Title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Tel" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Address1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Address2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CountryId" Type="Int32" />
+          <Property Name="Zip_Code" Type="Double" />
+          <Property Name="Investor" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Country" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CompanyType" Relationship="Self.FK_Contacts_Type" FromRole="Contacts" ToRole="CompanyType" />
+          <NavigationProperty Name="Country1" Relationship="Self.FK_Contacts_Country" FromRole="Contacts" ToRole="Country" />
+          <NavigationProperty Name="Investor1" Relationship="MarketingModel.FK_Contacts_Investors" FromRole="Contact" ToRole="Investor" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Country1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Contacts" Relationship="Self.FK_Contacts_Country" FromRole="Country" ToRole="Contacts" />
+          <NavigationProperty Name="Investors" Relationship="MarketingModel.FK_Investors_Country" FromRole="Country" ToRole="Investor" />
+        </EntityType>
+        <EntityType Name="Currency">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Currency1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Investors" Relationship="MarketingModel.FK_Investors_Currency" FromRole="Currency" ToRole="Investor" />
+          <NavigationProperty Name="Investors1" Relationship="MarketingModel.FK_Investors_Currency1" FromRole="Currency" ToRole="Investor" />
+          <NavigationProperty Name="Investors2" Relationship="MarketingModel.FK_Investors_Currency2" FromRole="Currency" ToRole="Investor" />
+          <NavigationProperty Name="Investors3" Relationship="MarketingModel.FK_Investors_Currency3" FromRole="Currency" ToRole="Investor" />
+          </EntityType>
+        <EntityType Name="FirstClose">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstClose1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Investors" Relationship="MarketingModel.FK_Investors_FirstClose" FromRole="FirstClose" ToRole="Investor" />
+        </EntityType>
+        <EntityType Name="FirstTime">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstTime1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Investors" Relationship="MarketingModel.FK_Investors_FirstTime" FromRole="FirstTime" ToRole="Investor" />
+        </EntityType>
+        <EntityType Name="Intralink">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Intralinks" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="InvestorNote">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="InvestorId" Type="Int32" />
+          <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="MailingList">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MailingList1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="MeetingFrequency">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MeetingFrequency1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Investors" Relationship="MarketingModel.FK_Investors_MeetingFrequency" FromRole="MeetingFrequency" ToRole="Investor" />
+        </EntityType>
+        <EntityType Name="PEInvesting">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PEInvesting1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Investors" Relationship="MarketingModel.FK_Investors_PEInvesting" FromRole="PEInvesting" ToRole="Investor" />
+        </EntityType>
+        <EntityType Name="Priority">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Priority1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Investors" Relationship="MarketingModel.FK_Investors_Priority" FromRole="Priority" ToRole="Investor" />
+        </EntityType>
+        <EntityType Name="ProductList">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductList1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Region">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Region1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="InvestorRegions" Relationship="MarketingModel.FK_InvestorRegions_Region" FromRole="Region" ToRole="InvestorRegion" />
+          <NavigationProperty Name="Investors" Relationship="MarketingModel.FK_Investors_Region" FromRole="Region" ToRole="Investor" />
+        </EntityType>
+        <EntityType Name="RFPOutCome">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RFPOutCome1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Investors" Relationship="MarketingModel.FK_Investors_RFPOutCome" FromRole="RFPOutCome" ToRole="Investor" />
+        </EntityType>
+        <EntityType Name="SeparateAccount">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SeparateAccount1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Investors" Relationship="MarketingModel.FK_Investors_SeparateAccount" FromRole="SeparateAccount" ToRole="Investor" />
+        </EntityType>
+        <EntityType Name="Stage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Stage1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="InvestorStages" Relationship="MarketingModel.FK_InvestorStages_Stage" FromRole="Stage" ToRole="InvestorStage" />
+          <NavigationProperty Name="Investors" Relationship="MarketingModel.FK_Investors_Stage" FromRole="Stage" ToRole="Investor" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="InvestorStage">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="InvestorId" Type="Int32" />
+          <Property Name="Stage" Type="Int32" />
+          <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Stage1" Relationship="MarketingModel.FK_InvestorStages_Stage" FromRole="InvestorStage" ToRole="Stage" />
+          <NavigationProperty Name="Investor" Relationship="MarketingModel.FK_InvestorStages_Investors" FromRole="InvestorStage" ToRole="Investor" />
+        </EntityType>
+        <Association Name="FK_Contacts_Type">
+          <End Role="CompanyType" Type="Self.CompanyType" Multiplicity="0..1" />
+          <End Role="Contacts" Type="Self.Contact" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CompanyType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Contacts">
+              <PropertyRef Name="TypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contacts_Country">
+          <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+          <End Role="Contacts" Type="Self.Contact" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Contacts">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MarketingEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AbbottPersons" EntityType="Self.AbbottPerson" />
+          <EntitySet Name="Coinvestments" EntityType="Self.Coinvestment" />
+          <EntitySet Name="CompanyTypes" EntityType="Self.CompanyType" />
+          <EntitySet Name="Contacts" EntityType="Self.Contact" />
+          <EntitySet Name="Countries" EntityType="Self.Country" />
+          <EntitySet Name="Currencies" EntityType="Self.Currency" />
+          <EntitySet Name="FirstCloses" EntityType="Self.FirstClose" />
+          <EntitySet Name="FirstTimes" EntityType="Self.FirstTime" />
+          <EntitySet Name="Intralinks" EntityType="Self.Intralink" />
+          <EntitySet Name="InvestorNotes" EntityType="Self.InvestorNote" />
+          <EntitySet Name="MailingLists" EntityType="Self.MailingList" />
+          <EntitySet Name="MeetingFrequencies" EntityType="Self.MeetingFrequency" />
+          <EntitySet Name="PEInvestings" EntityType="Self.PEInvesting" />
+          <EntitySet Name="Priorities" EntityType="Self.Priority" />
+          <EntitySet Name="ProductLists" EntityType="Self.ProductList" />
+          <EntitySet Name="Regions" EntityType="Self.Region" />
+          <EntitySet Name="RFPOutComes" EntityType="Self.RFPOutCome" />
+          <EntitySet Name="SeparateAccounts" EntityType="Self.SeparateAccount" />
+          <EntitySet Name="Stages" EntityType="Self.Stage" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="InvestorStages" EntityType="Self.InvestorStage" />
+          <AssociationSet Name="FK_Contacts_Type" Association="Self.FK_Contacts_Type">
+            <End Role="CompanyType" EntitySet="CompanyTypes" />
+            <End Role="Contacts" EntitySet="Contacts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contacts_Country" Association="Self.FK_Contacts_Country">
+            <End Role="Country" EntitySet="Countries" />
+            <End Role="Contacts" EntitySet="Contacts" />
+          </AssociationSet>
+          <EntitySet Name="Industries" EntityType="MarketingModel.Industry" />
+          <EntitySet Name="InvestorIndustries" EntityType="MarketingModel.InvestorIndustry" />
+          <EntitySet Name="InvestorRegions" EntityType="MarketingModel.InvestorRegion" />
+          <EntitySet Name="Types" EntityType="MarketingModel.Type" />
+          <AssociationSet Name="FK_InvestorIndustries_Industry" Association="MarketingModel.FK_InvestorIndustries_Industry">
+            <End Role="Industry" EntitySet="Industries" />
+            <End Role="InvestorIndustry" EntitySet="InvestorIndustries" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InvestorRegions_Region" Association="MarketingModel.FK_InvestorRegions_Region">
+            <End Role="Region" EntitySet="Regions" />
+            <End Role="InvestorRegion" EntitySet="InvestorRegions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InvestorStages_Stage" Association="MarketingModel.FK_InvestorStages_Stage">
+            <End Role="Stage" EntitySet="Stages" />
+            <End Role="InvestorStage" EntitySet="InvestorStages" />
+          </AssociationSet>
+          <EntitySet Name="Investors" EntityType="MarketingModel.Investor" />
+          <AssociationSet Name="FK_Investors_AbbottPerson" Association="MarketingModel.FK_Investors_AbbottPerson">
+            <End Role="AbbottPerson" EntitySet="AbbottPersons" />
+            <End Role="Investor" EntitySet="Investors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Investors_Coinvestments" Association="MarketingModel.FK_Investors_Coinvestments">
+            <End Role="Coinvestment" EntitySet="Coinvestments" />
+            <End Role="Investor" EntitySet="Investors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Investors_Type" Association="MarketingModel.FK_Investors_Type">
+            <End Role="CompanyType" EntitySet="CompanyTypes" />
+            <End Role="Investor" EntitySet="Investors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contacts_Investors" Association="MarketingModel.FK_Contacts_Investors">
+            <End Role="Investor" EntitySet="Investors" />
+            <End Role="Contact" EntitySet="Contacts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Investors_Country" Association="MarketingModel.FK_Investors_Country">
+            <End Role="Country" EntitySet="Countries" />
+            <End Role="Investor" EntitySet="Investors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Investors_Currency" Association="MarketingModel.FK_Investors_Currency">
+            <End Role="Currency" EntitySet="Currencies" />
+            <End Role="Investor" EntitySet="Investors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Investors_Currency1" Association="MarketingModel.FK_Investors_Currency1">
+            <End Role="Currency" EntitySet="Currencies" />
+            <End Role="Investor" EntitySet="Investors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Investors_Currency2" Association="MarketingModel.FK_Investors_Currency2">
+            <End Role="Currency" EntitySet="Currencies" />
+            <End Role="Investor" EntitySet="Investors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Investors_Currency3" Association="MarketingModel.FK_Investors_Currency3">
+            <End Role="Currency" EntitySet="Currencies" />
+            <End Role="Investor" EntitySet="Investors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Investors_FirstClose" Association="MarketingModel.FK_Investors_FirstClose">
+            <End Role="FirstClose" EntitySet="FirstCloses" />
+            <End Role="Investor" EntitySet="Investors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Investors_FirstTime" Association="MarketingModel.FK_Investors_FirstTime">
+            <End Role="FirstTime" EntitySet="FirstTimes" />
+            <End Role="Investor" EntitySet="Investors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InvestorIndustries_InvestorIndustries" Association="MarketingModel.FK_InvestorIndustries_InvestorIndustries">
+            <End Role="Investor" EntitySet="Investors" />
+            <End Role="InvestorIndustry" EntitySet="InvestorIndustries" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InvestorRegions_Investors" Association="MarketingModel.FK_InvestorRegions_Investors">
+            <End Role="Investor" EntitySet="Investors" />
+            <End Role="InvestorRegion" EntitySet="InvestorRegions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Investors_MeetingFrequency" Association="MarketingModel.FK_Investors_MeetingFrequency">
+            <End Role="MeetingFrequency" EntitySet="MeetingFrequencies" />
+            <End Role="Investor" EntitySet="Investors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Investors_PEInvesting" Association="MarketingModel.FK_Investors_PEInvesting">
+            <End Role="PEInvesting" EntitySet="PEInvestings" />
+            <End Role="Investor" EntitySet="Investors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Investors_Priority" Association="MarketingModel.FK_Investors_Priority">
+            <End Role="Priority" EntitySet="Priorities" />
+            <End Role="Investor" EntitySet="Investors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Investors_Region" Association="MarketingModel.FK_Investors_Region">
+            <End Role="Region" EntitySet="Regions" />
+            <End Role="Investor" EntitySet="Investors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Investors_RFPOutCome" Association="MarketingModel.FK_Investors_RFPOutCome">
+            <End Role="RFPOutCome" EntitySet="RFPOutComes" />
+            <End Role="Investor" EntitySet="Investors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Investors_SeparateAccount" Association="MarketingModel.FK_Investors_SeparateAccount">
+            <End Role="SeparateAccount" EntitySet="SeparateAccounts" />
+            <End Role="Investor" EntitySet="Investors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Investors_Stage" Association="MarketingModel.FK_Investors_Stage">
+            <End Role="Stage" EntitySet="Stages" />
+            <End Role="Investor" EntitySet="Investors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InvestorStages_Investors" Association="MarketingModel.FK_InvestorStages_Investors">
+            <End Role="Investor" EntitySet="Investors" />
+            <End Role="InvestorStage" EntitySet="InvestorStages" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Industry">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="InvestorIndustries" Relationship="MarketingModel.FK_InvestorIndustries_Industry" FromRole="Industry" ToRole="InvestorIndustry" />
+        </EntityType>
+        <EntityType Name="InvestorIndustry">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="InvestorId" Type="Int32" />
+          <Property Name="IndustryId" Type="Int32" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Industry" Relationship="MarketingModel.FK_InvestorIndustries_Industry" FromRole="InvestorIndustry" ToRole="Industry" />
+          <NavigationProperty Name="Investor" Relationship="MarketingModel.FK_InvestorIndustries_InvestorIndustries" FromRole="InvestorIndustry" ToRole="Investor" />
+        </EntityType>
+        <EntityType Name="InvestorRegion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="InvestorId" Type="Int32" />
+          <Property Name="RegionId" Type="Int32" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Region" Relationship="MarketingModel.FK_InvestorRegions_Region" FromRole="InvestorRegion" ToRole="Region" />
+          <NavigationProperty Name="Investor" Relationship="MarketingModel.FK_InvestorRegions_Investors" FromRole="InvestorRegion" ToRole="Investor" />
+        </EntityType>
+        <EntityType Name="Type">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_InvestorIndustries_Industry">
+          <End Type="MarketingModel.Industry" Role="Industry" Multiplicity="0..1" />
+          <End Type="MarketingModel.InvestorIndustry" Role="InvestorIndustry" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Industry">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="InvestorIndustry">
+              <PropertyRef Name="IndustryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InvestorRegions_Region">
+          <End Type="MarketingModel.Region" Role="Region" Multiplicity="0..1" />
+          <End Type="MarketingModel.InvestorRegion" Role="InvestorRegion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Region">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="InvestorRegion">
+              <PropertyRef Name="RegionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InvestorStages_Stage">
+          <End Type="MarketingModel.Stage" Role="Stage" Multiplicity="0..1" />
+          <End Type="MarketingModel.InvestorStage" Role="InvestorStage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stage">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="InvestorStage">
+              <PropertyRef Name="Stage" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Investor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="PEInvestingId" Type="Int32" />
+          <Property Name="TypeId" Type="Int32" />
+          <Property Name="RegionId" Type="Int32" />
+          <Property Name="Address1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Address2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Zip_Code" Type="Double" />
+          <Property Name="CountryId" Type="Int32" />
+          <Property Name="Web" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Tel" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Fax" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Funds_under_Mgmt__mn_" Type="Double" />
+          <Property Name="FundUnderManagementCurrencyId" Type="Int32" />
+          <Property Name="Funds_under_Mgmt__mn_USD_" Type="Double" />
+          <Property Name="Funds_under_Mgmt__mn_EUR_" Type="Double" />
+          <Property Name="Current_Allocation_to_PE____" Type="Double" />
+          <Property Name="Current_Allocation_to_PE__mn_USD_" Type="Double" />
+          <Property Name="Current_Allocation_to_PE__mn_EUR_" Type="Double" />
+          <Property Name="Target_Allocation_to_PE____" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Target_Allocation_to_PE__mn_USD_" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Target_Allocation_to_PE__mn_EUR_" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Separate_Accounts_Committed_Capital___" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Separate_Accounts_Committed_Capital_USD_" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Separate_Accounts_Committed_Capital_EUR_" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Typical_Investment_Size__mn_" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Fund_Preferences" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Geographic_Preferences" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="FirstTimeId" Type="Int32" />
+          <Property Name="FirstCloseId" Type="Int32" />
+          <Property Name="First_Close_Investor" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="SeparateAccountId" Type="Int32" />
+          <Property Name="CoInvestmentsId" Type="Int32" />
+          <Property Name="Co_Invest_with_GP" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Next12MonthCurrencyId" Type="Int32" />
+          <Property Name="Next_12_Months_Amount_min__mn_" Type="Double" />
+          <Property Name="Next_12_Months_Amount_max__mn_" Type="Double" />
+          <Property Name="Next_12_Months_Amount___mn__min" Type="Double" />
+          <Property Name="Next_12_Months_Amount___mn__max" Type="Double" />
+          <Property Name="Next_12_Months_Number_of_Funds__min_" Type="Double" />
+          <Property Name="Next_12_Months_Number_of_Funds__max_" Type="Double" />
+          <Property Name="Next_12_Months___Fund_Type_Preferences" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Date_of_12_Month_Plan" Type="DateTime" Precision="3" />
+          <Property Name="General_Consultants" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Private_Equity_Consultants" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Stage" Type="Int32" />
+          <Property Name="RFPOutcome" Type="Int32" />
+          <Property Name="AbbottPerson" Type="Int32" />
+          <Property Name="MeetingFrequency" Type="Int32" />
+          <Property Name="Priority" Type="Int32" />
+          <NavigationProperty Name="AbbottPerson1" Relationship="MarketingModel.FK_Investors_AbbottPerson" FromRole="Investor" ToRole="AbbottPerson" />
+          <NavigationProperty Name="Coinvestment" Relationship="MarketingModel.FK_Investors_Coinvestments" FromRole="Investor" ToRole="Coinvestment" />
+          <NavigationProperty Name="CompanyType" Relationship="MarketingModel.FK_Investors_Type" FromRole="Investor" ToRole="CompanyType" />
+          <NavigationProperty Name="Contacts" Relationship="MarketingModel.FK_Contacts_Investors" FromRole="Investor" ToRole="Contact" />
+          <NavigationProperty Name="Country" Relationship="MarketingModel.FK_Investors_Country" FromRole="Investor" ToRole="Country" />
+          <NavigationProperty Name="Currency" Relationship="MarketingModel.FK_Investors_Currency" FromRole="Investor" ToRole="Currency" />
+          <NavigationProperty Name="Currency1" Relationship="MarketingModel.FK_Investors_Currency1" FromRole="Investor" ToRole="Currency" />
+          <NavigationProperty Name="Currency2" Relationship="MarketingModel.FK_Investors_Currency2" FromRole="Investor" ToRole="Currency" />
+          <NavigationProperty Name="Currency3" Relationship="MarketingModel.FK_Investors_Currency3" FromRole="Investor" ToRole="Currency" />
+          <NavigationProperty Name="FirstClose" Relationship="MarketingModel.FK_Investors_FirstClose" FromRole="Investor" ToRole="FirstClose" />
+          <NavigationProperty Name="FirstTime" Relationship="MarketingModel.FK_Investors_FirstTime" FromRole="Investor" ToRole="FirstTime" />
+          <NavigationProperty Name="InvestorIndustries" Relationship="MarketingModel.FK_InvestorIndustries_InvestorIndustries" FromRole="Investor" ToRole="InvestorIndustry" />
+          <NavigationProperty Name="InvestorRegions" Relationship="MarketingModel.FK_InvestorRegions_Investors" FromRole="Investor" ToRole="InvestorRegion" />
+          <NavigationProperty Name="MeetingFrequency1" Relationship="MarketingModel.FK_Investors_MeetingFrequency" FromRole="Investor" ToRole="MeetingFrequency" />
+          <NavigationProperty Name="PEInvesting" Relationship="MarketingModel.FK_Investors_PEInvesting" FromRole="Investor" ToRole="PEInvesting" />
+          <NavigationProperty Name="Priority1" Relationship="MarketingModel.FK_Investors_Priority" FromRole="Investor" ToRole="Priority" />
+          <NavigationProperty Name="Region" Relationship="MarketingModel.FK_Investors_Region" FromRole="Investor" ToRole="Region" />
+          <NavigationProperty Name="RFPOutCome1" Relationship="MarketingModel.FK_Investors_RFPOutCome" FromRole="Investor" ToRole="RFPOutCome" />
+          <NavigationProperty Name="SeparateAccount" Relationship="MarketingModel.FK_Investors_SeparateAccount" FromRole="Investor" ToRole="SeparateAccount" />
+          <NavigationProperty Name="Stage1" Relationship="MarketingModel.FK_Investors_Stage" FromRole="Investor" ToRole="Stage" />
+          <NavigationProperty Name="InvestorStages" Relationship="MarketingModel.FK_InvestorStages_Investors" FromRole="Investor" ToRole="InvestorStage" />
+        </EntityType>
+        <Association Name="FK_Investors_AbbottPerson">
+          <End Type="MarketingModel.AbbottPerson" Role="AbbottPerson" Multiplicity="0..1" />
+          <End Type="MarketingModel.Investor" Role="Investor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AbbottPerson">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Investor">
+              <PropertyRef Name="AbbottPerson" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Investors_Coinvestments">
+          <End Type="MarketingModel.Coinvestment" Role="Coinvestment" Multiplicity="0..1" />
+          <End Type="MarketingModel.Investor" Role="Investor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Coinvestment">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Investor">
+              <PropertyRef Name="CoInvestmentsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Investors_Type">
+          <End Type="MarketingModel.CompanyType" Role="CompanyType" Multiplicity="0..1" />
+          <End Type="MarketingModel.Investor" Role="Investor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CompanyType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Investor">
+              <PropertyRef Name="TypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contacts_Investors">
+          <End Type="MarketingModel.Investor" Role="Investor" Multiplicity="0..1" />
+          <End Type="MarketingModel.Contact" Role="Contact" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Investor">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Contact">
+              <PropertyRef Name="InvestorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Investors_Country">
+          <End Type="MarketingModel.Country" Role="Country" Multiplicity="0..1" />
+          <End Type="MarketingModel.Investor" Role="Investor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Investor">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Investors_Currency">
+          <End Type="MarketingModel.Currency" Role="Currency" Multiplicity="0..1" />
+          <End Type="MarketingModel.Investor" Role="Investor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Currency">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Investor">
+              <PropertyRef Name="Next12MonthCurrencyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Investors_Currency1">
+          <End Type="MarketingModel.Currency" Role="Currency" Multiplicity="0..1" />
+          <End Type="MarketingModel.Investor" Role="Investor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Currency">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Investor">
+              <PropertyRef Name="FundUnderManagementCurrencyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Investors_Currency2">
+          <End Type="MarketingModel.Currency" Role="Currency" Multiplicity="0..1" />
+          <End Type="MarketingModel.Investor" Role="Investor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Currency">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Investor">
+              <PropertyRef Name="FundUnderManagementCurrencyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Investors_Currency3">
+          <End Type="MarketingModel.Currency" Role="Currency" Multiplicity="0..1" />
+          <End Type="MarketingModel.Investor" Role="Investor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Currency">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Investor">
+              <PropertyRef Name="Next12MonthCurrencyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Investors_FirstClose">
+          <End Type="MarketingModel.FirstClose" Role="FirstClose" Multiplicity="0..1" />
+          <End Type="MarketingModel.Investor" Role="Investor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FirstClose">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Investor">
+              <PropertyRef Name="FirstCloseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Investors_FirstTime">
+          <End Type="MarketingModel.FirstTime" Role="FirstTime" Multiplicity="0..1" />
+          <End Type="MarketingModel.Investor" Role="Investor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FirstTime">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Investor">
+              <PropertyRef Name="FirstTimeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InvestorIndustries_InvestorIndustries">
+          <End Type="MarketingModel.Investor" Role="Investor" Multiplicity="0..1" />
+          <End Type="MarketingModel.InvestorIndustry" Role="InvestorIndustry" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Investor">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="InvestorIndustry">
+              <PropertyRef Name="InvestorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InvestorRegions_Investors">
+          <End Type="MarketingModel.Investor" Role="Investor" Multiplicity="0..1" />
+          <End Type="MarketingModel.InvestorRegion" Role="InvestorRegion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Investor">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="InvestorRegion">
+              <PropertyRef Name="InvestorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Investors_MeetingFrequency">
+          <End Type="MarketingModel.MeetingFrequency" Role="MeetingFrequency" Multiplicity="0..1" />
+          <End Type="MarketingModel.Investor" Role="Investor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MeetingFrequency">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Investor">
+              <PropertyRef Name="MeetingFrequency" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Investors_PEInvesting">
+          <End Type="MarketingModel.PEInvesting" Role="PEInvesting" Multiplicity="0..1" />
+          <End Type="MarketingModel.Investor" Role="Investor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PEInvesting">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Investor">
+              <PropertyRef Name="PEInvestingId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Investors_Priority">
+          <End Type="MarketingModel.Priority" Role="Priority" Multiplicity="0..1" />
+          <End Type="MarketingModel.Investor" Role="Investor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Priority">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Investor">
+              <PropertyRef Name="Priority" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Investors_Region">
+          <End Type="MarketingModel.Region" Role="Region" Multiplicity="0..1" />
+          <End Type="MarketingModel.Investor" Role="Investor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Region">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Investor">
+              <PropertyRef Name="RegionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Investors_RFPOutCome">
+          <End Type="MarketingModel.RFPOutCome" Role="RFPOutCome" Multiplicity="0..1" />
+          <End Type="MarketingModel.Investor" Role="Investor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RFPOutCome">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Investor">
+              <PropertyRef Name="RFPOutcome" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Investors_SeparateAccount">
+          <End Type="MarketingModel.SeparateAccount" Role="SeparateAccount" Multiplicity="0..1" />
+          <End Type="MarketingModel.Investor" Role="Investor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SeparateAccount">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Investor">
+              <PropertyRef Name="SeparateAccountId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Investors_Stage">
+          <End Type="MarketingModel.Stage" Role="Stage" Multiplicity="0..1" />
+          <End Type="MarketingModel.Investor" Role="Investor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stage">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Investor">
+              <PropertyRef Name="Stage" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InvestorStages_Investors">
+          <End Type="MarketingModel.Investor" Role="Investor" Multiplicity="0..1" />
+          <End Type="MarketingModel.InvestorStage" Role="InvestorStage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Investor">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="InvestorStage">
+              <PropertyRef Name="InvestorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MarketingModelStoreContainer" CdmEntityContainer="MarketingEntities">
+          <EntitySetMapping Name="AbbottPersons">
+            <EntityTypeMapping TypeName="MarketingModel.AbbottPerson">
+              <MappingFragment StoreEntitySet="AbbottPerson">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="AbbottPerson1" ColumnName="AbbottPerson" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Coinvestments">
+            <EntityTypeMapping TypeName="MarketingModel.Coinvestment">
+              <MappingFragment StoreEntitySet="Coinvestments">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Coinvestments" ColumnName="Coinvestments" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CompanyTypes">
+            <EntityTypeMapping TypeName="MarketingModel.CompanyType">
+              <MappingFragment StoreEntitySet="CompanyType">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contacts">
+            <EntityTypeMapping TypeName="MarketingModel.Contact">
+              <MappingFragment StoreEntitySet="Contacts">
+                <ScalarProperty Name="ContactId" ColumnName="ContactId" />
+                <ScalarProperty Name="InvestorId" ColumnName="InvestorId" />
+                <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Job_Title" ColumnName="Job Title" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Tel" ColumnName="Tel" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+                <ScalarProperty Name="Zip_Code" ColumnName="Zip Code" />
+                <ScalarProperty Name="Investor" ColumnName="Investor" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Countries">
+            <EntityTypeMapping TypeName="MarketingModel.Country">
+              <MappingFragment StoreEntitySet="Country">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Country1" ColumnName="Country" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Currencies">
+            <EntityTypeMapping TypeName="MarketingModel.Currency">
+              <MappingFragment StoreEntitySet="Currency">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Currency1" ColumnName="Currency" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FirstCloses">
+            <EntityTypeMapping TypeName="MarketingModel.FirstClose">
+              <MappingFragment StoreEntitySet="FirstClose">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FirstClose1" ColumnName="FirstClose" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FirstTimes">
+            <EntityTypeMapping TypeName="MarketingModel.FirstTime">
+              <MappingFragment StoreEntitySet="FirstTime">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FirstTime1" ColumnName="FirstTime" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Intralinks">
+            <EntityTypeMapping TypeName="MarketingModel.Intralink">
+              <MappingFragment StoreEntitySet="Intralinks">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Intralinks" ColumnName="Intralinks" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InvestorNotes">
+            <EntityTypeMapping TypeName="MarketingModel.InvestorNote">
+              <MappingFragment StoreEntitySet="InvestorNotes">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="InvestorId" ColumnName="InvestorId" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MailingLists">
+            <EntityTypeMapping TypeName="MarketingModel.MailingList">
+              <MappingFragment StoreEntitySet="MailingList">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="MailingList1" ColumnName="MailingList" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MeetingFrequencies">
+            <EntityTypeMapping TypeName="MarketingModel.MeetingFrequency">
+              <MappingFragment StoreEntitySet="MeetingFrequency">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="MeetingFrequency1" ColumnName="MeetingFrequency" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PEInvestings">
+            <EntityTypeMapping TypeName="MarketingModel.PEInvesting">
+              <MappingFragment StoreEntitySet="PEInvesting">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="PEInvesting1" ColumnName="PEInvesting" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Priorities">
+            <EntityTypeMapping TypeName="MarketingModel.Priority">
+              <MappingFragment StoreEntitySet="Priority">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Priority1" ColumnName="Priority" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductLists">
+            <EntityTypeMapping TypeName="MarketingModel.ProductList">
+              <MappingFragment StoreEntitySet="ProductList">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ProductList1" ColumnName="ProductList" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Regions">
+            <EntityTypeMapping TypeName="MarketingModel.Region">
+              <MappingFragment StoreEntitySet="Region">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Region1" ColumnName="Region" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RFPOutComes">
+            <EntityTypeMapping TypeName="MarketingModel.RFPOutCome">
+              <MappingFragment StoreEntitySet="RFPOutCome">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="RFPOutCome1" ColumnName="RFPOutCome" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SeparateAccounts">
+            <EntityTypeMapping TypeName="MarketingModel.SeparateAccount">
+              <MappingFragment StoreEntitySet="SeparateAccount">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="SeparateAccount1" ColumnName="SeparateAccount" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Stages">
+            <EntityTypeMapping TypeName="MarketingModel.Stage">
+              <MappingFragment StoreEntitySet="Stage">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Stage1" ColumnName="Stage" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="MarketingModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InvestorStages">
+            <EntityTypeMapping TypeName="MarketingModel.InvestorStage">
+              <MappingFragment StoreEntitySet="InvestorStages">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="InvestorId" ColumnName="InvestorId" />
+                <ScalarProperty Name="Stage" ColumnName="Stage" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Industries">
+            <EntityTypeMapping TypeName="MarketingModel.Industry">
+              <MappingFragment StoreEntitySet="Industry">
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InvestorIndustries">
+            <EntityTypeMapping TypeName="MarketingModel.InvestorIndustry">
+              <MappingFragment StoreEntitySet="InvestorIndustries">
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="IndustryId" ColumnName="IndustryId" />
+                <ScalarProperty Name="InvestorId" ColumnName="InvestorId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InvestorRegions">
+            <EntityTypeMapping TypeName="MarketingModel.InvestorRegion">
+              <MappingFragment StoreEntitySet="InvestorRegions">
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="RegionId" ColumnName="RegionId" />
+                <ScalarProperty Name="InvestorId" ColumnName="InvestorId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Types">
+            <EntityTypeMapping TypeName="MarketingModel.Type">
+              <MappingFragment StoreEntitySet="Types">
+                <ScalarProperty Name="Type1" ColumnName="Type" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Investors">
+            <EntityTypeMapping TypeName="MarketingModel.Investor">
+              <MappingFragment StoreEntitySet="Investors">
+                <ScalarProperty Name="Priority" ColumnName="Priority" />
+                <ScalarProperty Name="MeetingFrequency" ColumnName="MeetingFrequency" />
+                <ScalarProperty Name="AbbottPerson" ColumnName="AbbottPerson" />
+                <ScalarProperty Name="RFPOutcome" ColumnName="RFPOutcome" />
+                <ScalarProperty Name="Stage" ColumnName="Stage" />
+                <ScalarProperty Name="Private_Equity_Consultants" ColumnName="Private Equity Consultants" />
+                <ScalarProperty Name="General_Consultants" ColumnName="General Consultants" />
+                <ScalarProperty Name="Date_of_12_Month_Plan" ColumnName="Date of 12 Month Plan" />
+                <ScalarProperty Name="Next_12_Months___Fund_Type_Preferences" ColumnName="Next 12 Months - Fund Type Preferences" />
+                <ScalarProperty Name="Next_12_Months_Number_of_Funds__max_" ColumnName="Next 12 Months Number of Funds (max)" />
+                <ScalarProperty Name="Next_12_Months_Number_of_Funds__min_" ColumnName="Next 12 Months Number of Funds (min)" />
+                <ScalarProperty Name="Next_12_Months_Amount___mn__max" ColumnName="Next 12 Months Amount ($mn) max" />
+                <ScalarProperty Name="Next_12_Months_Amount___mn__min" ColumnName="Next 12 Months Amount ($mn) min" />
+                <ScalarProperty Name="Next_12_Months_Amount_max__mn_" ColumnName="Next 12 Months Amount max (mn)" />
+                <ScalarProperty Name="Next_12_Months_Amount_min__mn_" ColumnName="Next 12 Months Amount min (mn)" />
+                <ScalarProperty Name="Next12MonthCurrencyId" ColumnName="Next12MonthCurrencyId" />
+                <ScalarProperty Name="Co_Invest_with_GP" ColumnName="Co-Invest with GP" />
+                <ScalarProperty Name="CoInvestmentsId" ColumnName="CoInvestmentsId" />
+                <ScalarProperty Name="SeparateAccountId" ColumnName="SeparateAccountId" />
+                <ScalarProperty Name="First_Close_Investor" ColumnName="First-Close Investor" />
+                <ScalarProperty Name="FirstCloseId" ColumnName="FirstCloseId" />
+                <ScalarProperty Name="FirstTimeId" ColumnName="FirstTimeId" />
+                <ScalarProperty Name="Geographic_Preferences" ColumnName="Geographic Preferences" />
+                <ScalarProperty Name="Fund_Preferences" ColumnName="Fund Preferences" />
+                <ScalarProperty Name="Typical_Investment_Size__mn_" ColumnName="Typical Investment Size (mn)" />
+                <ScalarProperty Name="Separate_Accounts_Committed_Capital_EUR_" ColumnName="Separate Accounts Committed Capital(EUR)" />
+                <ScalarProperty Name="Separate_Accounts_Committed_Capital_USD_" ColumnName="Separate Accounts Committed Capital(USD)" />
+                <ScalarProperty Name="Separate_Accounts_Committed_Capital___" ColumnName="Separate Accounts Committed Capital(%)" />
+                <ScalarProperty Name="Target_Allocation_to_PE__mn_EUR_" ColumnName="Target Allocation to PE (mn EUR)" />
+                <ScalarProperty Name="Target_Allocation_to_PE__mn_USD_" ColumnName="Target Allocation to PE (mn USD)" />
+                <ScalarProperty Name="Target_Allocation_to_PE____" ColumnName="Target Allocation to PE (%)" />
+                <ScalarProperty Name="Current_Allocation_to_PE__mn_EUR_" ColumnName="Current Allocation to PE (mn EUR)" />
+                <ScalarProperty Name="Current_Allocation_to_PE__mn_USD_" ColumnName="Current Allocation to PE (mn USD)" />
+                <ScalarProperty Name="Current_Allocation_to_PE____" ColumnName="Current Allocation to PE (%)" />
+                <ScalarProperty Name="Funds_under_Mgmt__mn_EUR_" ColumnName="Funds under Mgmt (mn EUR)" />
+                <ScalarProperty Name="Funds_under_Mgmt__mn_USD_" ColumnName="Funds under Mgmt (mn USD)" />
+                <ScalarProperty Name="FundUnderManagementCurrencyId" ColumnName="FundUnderManagementCurrencyId" />
+                <ScalarProperty Name="Funds_under_Mgmt__mn_" ColumnName="Funds under Mgmt (mn)" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Tel" ColumnName="Tel" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Web" ColumnName="Web" />
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+                <ScalarProperty Name="Zip_Code" ColumnName="Zip Code" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="RegionId" ColumnName="RegionId" />
+                <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+                <ScalarProperty Name="PEInvestingId" ColumnName="PEInvestingId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
